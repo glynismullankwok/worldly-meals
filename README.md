@@ -7,11 +7,11 @@
 
 * AS A XX,
 * I WANT XX,
-* AND THEN XX.
+* AND THEN XX. -->
 
 ## Description
 
-XX -->
+Our project is an e-commerce app called International Ingredients to Wordly Meals. It is for an international meal prep company, where customers can shop for international meals. The meal kits come with all the ingredients needed to prepare the desired meal. What sets our company apart is the great variety of international recipe choices that all come with nutritional data that the customer can use to fit into their own diets and lifestyles.
 
 ## Project/Application Requirements
 
