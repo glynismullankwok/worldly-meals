@@ -3,11 +3,11 @@
 
 ***
 
-<!-- ## User Story
+## User Story
 
-* AS A XX,
-* I WANT XX,
-* AND THEN XX. -->
+* AS A user who is interested in signing up with a meal delivery service and comparing all of my options,
+* I WANT a service that offers a great variety of international recipe choices that all come with nutritional data,
+* AND THEN be able to save recipes, ingredients, meal selections to my profile and/or my cart.
 
 ## Description
 
@@ -27,22 +27,24 @@ Our project is an e-commerce app called International Ingredients to Wordly Meal
 * Must meet good quality coding standards (indentation, scoping, naming).
 * Must NOT expose sensitive API key information on the server.
 
-<!-- ## API
+## API
 
-The Alex Trebek Tribute Trivia Challenge utilizes one API that provides over 156,000 trivia questions, clues, categories, answers and more. 
+International Ingredients to Wordly Meals utilizes Edamam&#8212;a robust app that offers a variety of API's broken down by 3 main topics: food, nutrition and recipes. From there, you will find more API's within each one of those 3 main topics. It can also be broken down by Business vs Consumer.
 
-* [jService](http://jservice.io//) - Thanks for the great API, Steve Ottenad! (@scottenad - https://github.com/sottenad)
+* [Edamam](https://www.edamam.com/)
 
-## Game Screenshot
-![jeopardy_trivia_game](./public/Images/gameboard_screenshot.png)
+## App Screenshot
+
+![worldly-meals](./public/Images/worldly-meals.gif)
 
 ## Template Engine
 
-The application framework for this site is by [Handlebars](https://handlebarsjs.com/) -->
+XX
+<!-- The application framework for this site is by [Handlebars](https://handlebarsjs.com/) -->
 
 ### Application Deployment Link - Heroku
 
-<!-- [Jeopardy Trivia Game](https://shielded-fjord-19309.herokuapp.com/) -->
+[International Ingredients to Wordly Meals](https://XX)
 
 ### Repository
 
