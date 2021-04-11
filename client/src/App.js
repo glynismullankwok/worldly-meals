@@ -8,17 +8,18 @@ import Item from "./components/member/Item";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import FoodDatabase from "./components/member/FoodDatabase"
-
+import FoodDatabase from "./components/member/FoodDatabase";
+import Footer from "./components/footer/Footer";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <Provider>
       <>
-        <Navbar />
         {/* <DivHero /> */}
         <Router>
+        <Navbar />
           <Switch>
             <Route exact path="/">
               <Home />
@@ -33,7 +34,7 @@ function App() {
               <Recipe />
             </Route>
             <Route exact path="/item">
-              < Item/>
+              <Item />
             </Route>
             <Route exact path="/ingredient">
               <Ingredient />
@@ -45,6 +46,7 @@ function App() {
               <FoodDatabase />
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </>
      </Provider>
