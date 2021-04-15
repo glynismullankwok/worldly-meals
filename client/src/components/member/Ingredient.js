@@ -1,7 +1,7 @@
 import { useStoreContext } from '../../utils/context/GlobalState'
 const Ingredient = (props) => {
-  const [state, dispatch] = useStoreContext()
-  console.log(state)
+  const [state, dispatch] = useStoreContext();
+  // console.log(state)
   // props.hit.recipe.ingredients.map((ingredient) => (
   //   <Ingredient {...ingredient} key={uuid()} />
   // ))} 

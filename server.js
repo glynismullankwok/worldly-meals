@@ -16,22 +16,22 @@ app.use(express.json())
 
 
 // session middleware here
- app.use(
-    session({
-      secret: "fraggle-rock", //pick a random string to make the hash that is generated secure
+app.use(
+  session({
+    secret: "fraggle-rock", //pick a random string to make the hash that is generated secure
     //   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-      resave: false, //required
-      saveUninitialized: false, //required
-    })
-  );
+    resave: false, //required
+    saveUninitialized: false, //required
+  })
+);
 
 // passport middleware here
 app.use(passport.initialize())
 app.use(passport.session())
 
 // Serve up static assets(usually on heroku)
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
 // Define API routes here
@@ -39,18 +39,21 @@ app.use(apiRoutes)
 
 // Send every other request to the React app 
 // Define any API routes before this runs
-app.get('*', (req, res)=> {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 
 })
-const uri = process.env.MONGODB_URL 
+const uri = process.env.MONGODB_URL
 // || "mongodb://localhost/nutrints"
-mongoose.connect(uri, 
-  { useNewUrlParser: true, 
-    useUnifiedTopology: true },() =>{
-    console.log('db connected')
-})
+mongoose.connect(uri,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  
+  }).then(() => console.log('mongodb connected'))
+  .catch(error => console.log('mongodb connection', error));
 
-app.listen(PORT, () =>{
-    console.log(`PORT ==> API server now on port ${PORT}! connect`);
+
+app.listen(PORT, () => {
+  console.log(`PORT ==> API server now on port ${PORT}! connect`);
 })

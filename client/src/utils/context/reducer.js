@@ -1,7 +1,5 @@
 import Item from "../../components/member/Item";
-import { ADD_POST, LOADING, ADD_RECIPE, SHOW_DITAIL, HIDE_DITAIL } from "./action";
-  
-  
+import { ADD_POST, LOADING, ADD_RECIPE, SHOW_DITAIL, HIDE_DITAIL, REMOVE_RECIPE } from "./action";
   
   const reducer = (state, action) => {
     switch (action.type) {
@@ -17,6 +15,14 @@ import { ADD_POST, LOADING, ADD_RECIPE, SHOW_DITAIL, HIDE_DITAIL } from "./actio
           return {
             ...state, recipe: [action.payload, ...state.recipe]
           }
+          case REMOVE_RECIPE:
+            console.log(action.payload)
+            return {
+              ...state, recipe: [state.recipe.filter(item => item.id !== action.payload)]
+
+            }
+
+
           case SHOW_DITAIL:
             console.log('---> ', action.payload)
 
