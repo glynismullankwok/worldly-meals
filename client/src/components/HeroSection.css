@@ -9,7 +9,7 @@ video {
 .hero-container {
     /* background: url('') center center/cover
     no-repeat; */
-    height: 100vh;
+    height: 150px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,6 @@ video {
     object-fit: contain;
 }
 
-.hero-container . p {
+.hero-container .p {
     margin-top: 8px;
 }

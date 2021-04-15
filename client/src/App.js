@@ -1,21 +1,57 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { StoreProvider as Provider } from "./utils/context/GlobalState";
+import Digest from "./components/member/Digest";
+import Ingredient from "./components/member/Ingredient";
+import Recipe from "./components/member/Recipe";
+import Item from "./components/member/Item";
+import Signup from "./components/pages/Signup";
+import Login from "./components/pages/Login";
+// import Home from "./pages/Home";
+import FoodDatabase from "./components/member/FoodDatabase"
 import './App.css';
 import Home from './components/pages/Home';
 
 function App() {
   return (
-    <>
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home}/>
-      </Switch>
-      </Router>
-    </>
-  );
-}
+      <Provider>
+        <>
+          {/* <DivHero /> */}
+          <Router>
+          <Navbar />
+
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/recipe">
+                <Recipe />
+              </Route>
+              <Route exact path="/item">
+                < Item/>
+              </Route>
+              <Route exact path="/ingredient">
+                <Ingredient />
+              </Route>
+              <Route exact path="/digest">
+                <Digest />
+              </Route>
+              <Route exact path="/foodDatabase">
+                <FoodDatabase />
+              </Route>
+            </Switch>
+          </Router>
+        </>
+       </Provider>
+    );
+  }
 
 export default App;
 

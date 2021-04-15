@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import '../App.css';
 import{ Button }  from './Button';
 import './HeroSection.css';
@@ -15,8 +16,8 @@ function HeroSection() {
             buttonSize='btn--large'>GET STARTED</Button>
             </div>
             <div className='hero-btns'>
-            <Button className='btns' buttonStyle='btn--primary'
-            buttonSize='btn--large'>SIGN IN</Button>
+            <Link to="/login" className='btns' buttonStyle='btn--primary'
+            buttonSize='btn--large'>Login</Link>
             </div>
         </div>
     )

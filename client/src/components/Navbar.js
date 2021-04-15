@@ -5,17 +5,15 @@ import { Button } from './Button';
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const[button, setButton] = useState(true);
-
-
+    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
-        if(window.innerWidth <= 960){
+        if (window.innerWidth <= 960) {
             setButton(false)
-        }else{
+        } else {
             setButton(true);
         }
     };
@@ -28,43 +26,48 @@ function Navbar() {
     window.addEventListener('resize', showButton);
 
     return (
-        <>
+       
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                         International Ingredients to Worldly Meals
-            <i className="fas fa-utensils"></i>
-
+                        <i className="fas fa-utensils"></i>
                     </Link>
+
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
+
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Home
-             </Link>
+                            </Link>
                         </li>
+
                         <li className='nav-item'>
-                            <Link to='/recipes' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
                                 Recipes
-             </Link>
+                            </Link>
                         </li>
+
                         <li className='nav-item'>
                             <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
                                 Nutrition
-             </Link>
+                            </Link>
                         </li>
+
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
+                            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Sign Up
-             </Link>
+                            </Link>
                         </li>
+                        
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+                    {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
                 </div>
             </nav>
-        </>
+       
     );
 }
 
