@@ -36,10 +36,10 @@ const Item = (props) => {
             {props.hit.recipe.mealType}
           </p>
           <p>Calories: {props.hit.recipe.calories}</p>
-          <button onClick={() => props.handleClick(props.id)}>Parchase</button>
+          <button onClick={() => props.handleClick(props.id)}>Purchase</button>
           <a href={props.hit.recipe.url}>Third Party</a>
-          <button onClick={() => dispatch({ type: SHOW_DITAIL, payload: { id: props.id, ingredient: props.ingredients } })}>show ditail</button>
-          <button onClick={() => dispatch({ type: HIDE_DITAIL, payload: props.id })}>hide ditail</button>
+          <button onClick={() => dispatch({ type: SHOW_DITAIL, payload: { id: props.id, ingredient: props.ingredients } })}>show detail</button>
+          <button onClick={() => dispatch({ type: HIDE_DITAIL, payload: props.id })}>hide detail</button>
 
           {state.ditail ? (
             <>
