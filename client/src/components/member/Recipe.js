@@ -4,7 +4,7 @@ import SearchFood from "./SearchFood";
 import axios from "axios";
 import uuid from "react-uuid";
 import { useStoreContext } from "../../utils/context/GlobalState";
-import { ADD_POST, LOADING, ADD_RECIPE, REMOVE_RECIPE } from "../../utils/context/action";
+import { ADD_RECIPE, REMOVE_RECIPE } from "../../utils/context/action";
 
 const Recipe = () => {
   const [state, dispatch] = useStoreContext();
@@ -83,15 +83,6 @@ const Recipe = () => {
             ))}
       </div>
 
-      
-      <div> 
-      <h1>{state.posts.name}</h1>
-
-      <button onClick={() => dispatch({ type: ADD_POST})}>ADDPOST</button>
-      <button onClick={() => dispatch({ type: LOADING})}>LOADING</button>
-
-      </div>
-      
     </div>
   );
 };
