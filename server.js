@@ -2,18 +2,19 @@ const path = require('path');
 const express = require('express');
 // const session = require('express-session');
 // const MongoStore = require('connect-mongo')(session);
-const cors = require('cors')
 const mongoose = require('mongoose');
 const passport = require('./passport');
 const apiRoutes = require('./routes/api-route');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const app = express()
+require('dotenv').config()
+
 const PORT = process.env.PORT || 5000;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(cors)
+// app.use(bodyParser.urlencoded({extended: false}))
+// app.use(cors)
 // session middleware here
 //  app.use(
 //     session({
@@ -35,10 +36,11 @@ app.use(apiRoutes)
 // Send every other request to the React app 
 // Define any API routes before this runs
 app.get('*', (req, res)=> {
-    res,sendFile(path.join(__dirname, './client/build/index.html'));
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
 })
-const uri = process.env.MONGODB_URL || "mongodb://localhost/nutrints"
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true },() =>{
+const url = process.env.MONGODB_URL 
+// || "mongodb://localhost/nutrient"
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },() => {
     console.log('db connected')
 })
 app.listen(PORT, () =>{
