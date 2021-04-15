@@ -1,0 +1,45 @@
+.recipeHide {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 30px;
+    max-width: 400px;
+    min-width: 350px;
+    height: auto;
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+    border: 1px solid lightgray;
+  }
+  
+  .recipeShow {
+    /* border: 6px solid purple; */
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    box-shadow: 5px 10px 8px #888888;
+    margin-bottom: 60px;
+    padding: 20px;
+  }
+  .divMe {
+    width: 100%;
+  }
+  .ditails {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .ditailsIng {
+    /* bottom: 1px solid yellow; */
+    max-width: 400px;
+  }
+
+  .btnDiv {
+    display: flex;
+    justify-content: space-around;
+    max-width: 400px;
+  }

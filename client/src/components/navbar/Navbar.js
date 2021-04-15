@@ -1,37 +1,74 @@
-// import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { Button } from '../Button/Button';
 
-// const Navbar = () => {
-//     return (
-//         <div style={{border: '1px solid lightgray', width:'100vw',height:'70px', backgroundImage: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'}}>
-//             <ul style={ { display:'flex',flexDirection: 'row', justifyContent: 'space-around'} }>
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/">Home</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/signup">Signup</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/login">login</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/recipe">Recipe</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/item">Item</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/ingredient">Ingredient</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/digest">Digest</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/foodDatabase">FoodDatabase</a>
-//                 </li >
+function Navbar() {
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
 
-//             </ul>
-//         </div>
-//     )
-// }
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
-// export default Navbar
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false)
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton()
+
+    }, []);
+
+    window.addEventListener('resize', showButton);
+
+    return (
+       
+            <nav className='navbar'>
+                <div className='navbar-container'>
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        International Ingredients to Worldly Meals
+                        <i className="fas fa-utensils"></i>
+                    </Link>
+
+                    <div className='menu-icon' onClick={handleClick}>
+                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                    </div>
+
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <li className='nav-item'>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                Home
+                            </Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
+                                Recipes
+                            </Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
+                                Nutrition
+                            </Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
+                                Sign Up
+                            </Link>
+                        </li>
+                        
+                    </ul>
+                    {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+                </div>
+            </nav>
+       
+    );
+}
+
+export default Navbar;

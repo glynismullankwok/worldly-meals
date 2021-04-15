@@ -78,9 +78,10 @@ const Recipe = () => {
       >
         {isLoading
           ? "Loading..."
-          : state.recipe[0].map((hit) => (
-              <Item {...hit} key={uuid()} handleClick={handleClick} />
-            ))}
+          : (<Item />)
+          // state.recipe[0].map((hit) => (
+          // <Item {...hit} key={uuid()} handleClick={handleClick} />
+            }
       </div>
 
     </div>
