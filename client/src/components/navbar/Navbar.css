@@ -61,6 +61,7 @@
   .nav-links:hover {
     border-bottom: 4px solid #fff;
     transition: all 0.2s ease-out;
+    color: #fff;
   }
   
   .fa-bars {
@@ -156,3 +157,17 @@
       transition: 250ms;
     }
   }
+
+/* .navbar-logo:after {
+  content:"International Ingredients to Worldly Meals";
+}
+@media screen and (max-width: 1024px) {
+  .navbar-logo:before {
+    content:"Worldy Meals";
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar-logo:before {
+    content:"Worldy Meals";
+  }
+} */
