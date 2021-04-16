@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Signup.css';
 
 class Signup extends Component {
     state = {
@@ -23,10 +24,13 @@ class Signup extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="Container">
+                 <div className="Form-container">
+                     <div className="Text-container">
+                
                 {/* <p>Hello {this.state.firstName} {this.state.lastName}</p> */}
                 < form onSubmit={this.handleSubmit}>
-
+               
                 <div className="row">
                         <lable> Username</lable><br />
                         <input 
@@ -63,7 +67,10 @@ class Signup extends Component {
                     <br />
                     <button type="signup">Submit</button>
                 </form>
+                </div>
+                </div>
             </div>
+            
         )
     }
 }

@@ -44,7 +44,7 @@ app.get('*', (req, res)=> {
 
 })
 const uri = process.env.MONGODB_URL 
-// || "mongodb://localhost/nutrints"
+|| "mongodb://localhost/nutrints"
 mongoose.connect(uri, 
   { useNewUrlParser: true, 
     useUnifiedTopology: true },() =>{
