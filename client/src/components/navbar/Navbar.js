@@ -1,88 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { Button } from './Button';
 
-const Navbar = () => {
+function Navbar() {
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false)
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton()
+
+    }, []);
+
+    window.addEventListener('resize', showButton);
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-            <div className="container">
-                <Link className="navbar-brand" to="/">International Ingredients to Wordly Meals</Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+       
+            <nav className='navbar'>
+                <div className='navbar-container'>
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        International Ingredients to Worldly Meals
+                        <i className="fas fa-utensils"></i>
+                    </Link>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
+                    <div className='menu-icon' onClick={handleClick}>
+                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                    </div>
+
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <li className='nav-item'>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                Home
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/signup">Signup</Link>
+
+                        <li className='nav-item'>
+                            <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
+                                Recipes
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+
+                        <li className='nav-item'>
+                            <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
+                                Nutrition
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/recipe">Recipe</Link>
+
+                        <li className='nav-item'>
+                            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
+                                Sign Up
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/item">Item</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/ingredient">Ingredient</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/digest">Digest</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/foodDatabase">FoodDatabase</Link>
-                        </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link" to="/contact">Contact</Link>
-                        </li> */}
+                        
                     </ul>
+                    {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
                 </div>
-            </div>
-        </nav>
-    )
+            </nav>
+       
+    );
 }
 
-export default Navbar
-
-
-
-
-// const Navbar = () => {
-//     return (
-//         <div style={{border: '1px solid lightgray', width:'100vw',height:'70px', backgroundImage: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'}}>
-//             <ul style={ { display:'flex',flexDirection: 'row', justifyContent: 'space-around'} }>
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/">Home</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/signup">Signup</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/login">login</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/recipe">Recipe</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/item">Item</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/ingredient">Ingredient</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/digest">Digest</a>
-//                 </li >
-//                 <li style={{textDecoration:'none'}}>
-//                     <a href="/foodDatabase">FoodDatabase</a>
-//                 </li >
-
-//             </ul>
-//         </div>
-//     )
-// }
-
-// export default NavBar
+export default Navbar;
