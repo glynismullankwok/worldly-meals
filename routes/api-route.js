@@ -8,7 +8,7 @@ const recipeController = require('../controllers/recipeController')
 router.route('/api/user/login', passport.authenticate('local'))
     .post(recipeController.userLogin)
 
-router.route('api/order')
+router.route('/api/order')
     .post(recipeController.createOrder)
 
 

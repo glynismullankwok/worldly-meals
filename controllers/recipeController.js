@@ -30,19 +30,19 @@ module.exports = {
 
     createOrder: async (req, res) => {
         console.log('newOrder')
-        // Order.create(req.body)
-        //     .then(orderData => {
-        //         res.json(orderData)
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //         res.status(500).send()
-        //     })
-        const newOrder = await { title: req.body.title, catagory: req.body.catagory, calory: req.body.calory, image: req.body.image }
-        newOrder.save((err, savedOrder) => {
-            if (err) return res.json(err)
-            res.json(savedOrder)
-        })
+        Order.create(req.body)
+            .then(orderData => {
+                res.json(orderData)
+            })
+            .catch(err => {
+                console.log(err)
+                res.status(500).send()
+            })
+        // const newOrder = await { title: req.body.title, catagory: req.body.catagory, calory: req.body.calory, image: req.body.image }
+        // newOrder.save((err, savedOrder) => {
+        //     if (err) return res.json(err)
+        //     res.json(savedOrder)
+        // })
 
     },
 
