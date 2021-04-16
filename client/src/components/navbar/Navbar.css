@@ -191,3 +191,14 @@
       max-width: 125px;
     }
   }
+
+  /* If the screen size is 300px or less, set the smaller font-size */
+  @media only screen and (max-width: 300px) {
+    .navbar-logo {
+        font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        word-wrap: break-word;
+        max-width: 50px;
+    }
+  }
