@@ -5,7 +5,7 @@ const Digest = (props) => {
     <div>
       <p>
         {" "}
-        {props.index + 1}. {props.label} = {props.total}
+        {props.index + 1}. {props.label} = {(props.total).toFixed(2)}
       </p>
     </div>
   );

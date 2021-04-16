@@ -6,67 +6,74 @@ class Signup extends Component {
         email: '',
         username: '',
         password: ''
+    };
 
-    }
     handleInputChange = e => {
-        const { name, value} = e.target
+        const { name, value } = e.target
         this.setState({ [name]: value })
-    // console.log( e.target.name, e.target.value)
+        // console.log( e.target.name, e.target.value)
+    };
 
-    }
-    handleSubmit = e =>{
+    handleSubmit = e => {
         e.preventDefault()
-        const UserInfo = {username:this.state.username, email:this.state.email,  password:this.state.password }
-        console.log(UserInfo )
-        axios.post('/api/user', {username:this.state.username, email:this.state.email,  password:this.state.password }).then(res => console.log(res))
-        // localStorage.setItem('fullname', `{this.state.email} ${this.state.username} ${this.state.password}`)
-    }
+        const UserInfo = { username: this.state.username, email: this.state.email, password: this.state.password }
+        console.log(UserInfo)
+
+        axios.post('/api/user', UserInfo).then(res => console.log("Signed User ", res))
+        localStorage.setItem('fullname', `{this.state.email} ${this.state.username} ${this.state.password}`)
+        this.setState({
+            username: '',
+            email: '',
+            password: ''
+        });
+
+    };
+
     render() {
         return (
             <div>
                 {/* <p>Hello {this.state.firstName} {this.state.lastName}</p> */}
                 < form onSubmit={this.handleSubmit}>
 
-                <div className="row">
+                    <div className="row">
                         <lable> Username</lable><br />
-                        <input 
-                        name="username" 
-                        placeholder="Full Name"
-                        value={this.state.username}
-                        onChange={this.handleInputChange}
-                        type="text" 
+                        <input
+                            name="username"
+                            placeholder="Full Name"
+                            value={this.state.username}
+                            onChange={this.handleInputChange}
+                            type="text"
                         />
                     </div>
 
                     <div className="row">
                         <lable> email</lable><br />
                         <input
-                         name="email" 
-                         placeholder="email"
-                         value={this.state.email}
-                        onChange={this.handleInputChange}
-                        type="text" 
+                            name="email"
+                            placeholder="email"
+                            value={this.state.email}
+                            onChange={this.handleInputChange}
+                            type="text"
                         />
                     </div>
-                    
 
                     <div className="row">
                         <lable> Password</lable><br />
-                        <input 
-                        name="password"
-                        placeholder="password" 
-                        value={this.state.password}
-                        onChange={this.handleInputChange}
-                        type="text" 
+                        <input
+                            name="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleInputChange}
+                            type="text"
                         />
                     </div>
                     <br />
                     <button type="signup">Submit</button>
                 </form>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 export default Signup;
 
 
@@ -126,9 +133,9 @@ export default Signup;
 //           <p>I probably shouldn't tell you this, but your password is {password}!</p>
 //         </Container>
 //       </form>
-      
+
 //     </div>
-    
+
 //         // <div>
 //         //   <h1>Signup</h1>  
 //         // </div>
