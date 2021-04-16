@@ -1,0 +1,15 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  /* border-collapse: collapse; */
+}
+tr {
+  margin-left: 30%;
+}
+th,
+td {
+  padding: 5px;
+  text-align: left;
+  max-width: 150px;
+}
