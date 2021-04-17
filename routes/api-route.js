@@ -7,9 +7,11 @@ const recipeController = require('../controllers/recipeController')
 
 router.route('/api/user/login', passport.authenticate('local'))
     .post(recipeController.userLogin)
-    
-// router.route('api/recipe')
-// .get(recipeController.getRecipes)
+
+router.route('/api/order')
+    .post(recipeController.createOrder)
+
+
 // .get(recipeController.createRecipe)
 // router.route('api/recipe/:id')
 // .get(recipeController.updateRecipe)

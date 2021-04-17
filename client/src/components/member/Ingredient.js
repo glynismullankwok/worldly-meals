@@ -1,7 +1,8 @@
 import { useStoreContext } from '../../utils/context/GlobalState'
 const Ingredient = (props) => {
-  const [state, dispatch] = useStoreContext()
-  console.log(state)
+  const [state, dispatch] = useStoreContext();
+  // console.log(state)
+  // <h4>Ingredient</h4>
   // props.hit.recipe.ingredients.map((ingredient) => (
   //   <Ingredient {...ingredient} key={uuid()} />
   // ))} 
@@ -49,6 +50,7 @@ const Ingredient = (props) => {
             borderRadius: "1rem",
           }}
         >
+          
           {" "}
           <p>{props.text} </p>
         </div>

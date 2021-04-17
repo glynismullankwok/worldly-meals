@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { StoreProvider as Provider } from "./utils/context/GlobalState";
 import Digest from "./components/member/Digest";

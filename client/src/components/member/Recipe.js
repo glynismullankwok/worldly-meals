@@ -4,11 +4,10 @@ import SearchFood from "./SearchFood";
 import axios from "axios";
 import uuid from "react-uuid";
 import { useStoreContext } from "../../utils/context/GlobalState";
-import { ADD_POST, LOADING, ADD_RECIPE } from "../../utils/context/action";
+import { ADD_RECIPE, REMOVE_RECIPE } from "../../utils/context/action";
 
 const Recipe = () => {
   const [state, dispatch] = useStoreContext();
-console.log( 'HELLO', state)
   const [recipe, setrecipe] = useState();
   const [search, setSearch] = useState("Ethiopian Food");
   const [isLoading, setIsLoading] = useState(true);
@@ -17,17 +16,17 @@ console.log( 'HELLO', state)
   }, [search]);
 
   const fetchFood = () => {
-    const APP_ID = 'a7e4cdd9';
-    const API_KEY = 'efd018e424ec85db972aafa8104f3600';	
-
+    const APP_ID = process.env.REACT_APP_APP_ID;
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    
     axios
       .get(
         `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`
       )
       .then(res => {
-        console.log(res.data.hits);
-        const food = res.data.hits.map((hit) => ({ id: uuid(), hit }));
-        console.log("food=> ", food);
+        // console.log(res.data.hits);
+        const food = res.data.hits.map((hit) => ({ id: uuid(), price:(Math.random() * 10 + 20).toFixed(2), hit }));
+        // console.log("food=> ", food);
         dispatch({type:ADD_RECIPE, payload: food})
         setrecipe(({ ...recipe }, food));
         setIsLoading(false);
@@ -37,7 +36,9 @@ console.log( 'HELLO', state)
   const handleClick = (id) => {
     const Item = recipe.filter((item) => item.id !== id);
     setrecipe(Item);
-    console.log(recipe);
+    dispatch({type: REMOVE_RECIPE, payload:Item.id})
+    console.log(Item)
+    // console.log(recipe);
     console.log(id)
   };
 
@@ -49,17 +50,6 @@ console.log( 'HELLO', state)
       setSearch(searchFood);
     }
   };
-
-  // console.log("==>", recipe);
-  // useEffect(() => {
-  //   const app_id = 'a6633875';
-  //   const api_key = '9c24552c818c46fdab440aa14deb2ffe';
-  //   axios
-  //     .get(
-  //       `https://api.edamam.com/api/food-database/v2/parser?ingr=red%20apple&app_id=${app_id}&app_key=${api_key}`
-  //     )
-  //     .then((response) => console.log("food database: ", response.data));
-  // }, []);
 
   return (
     <div
@@ -88,20 +78,12 @@ console.log( 'HELLO', state)
       >
         {isLoading
           ? "Loading..."
-          : state.recipe[0].map((hit) => (
-              <Item {...hit} key={uuid()} handleClick={handleClick} />
-            ))}
+          : (<Item />)
+          // state.recipe[0].map((hit) => (
+          // <Item {...hit} key={uuid()} handleClick={handleClick} />
+            }
       </div>
 
-      
-      <div> 
-      <h1>{state.posts.name}</h1>
-
-      <button onClick={() => dispatch({ type: ADD_POST})}>ADDPOST</button>
-      <button onClick={() => dispatch({ type: LOADING})}>LOADING</button>
-
-      </div>
-      
     </div>
   );
 };
