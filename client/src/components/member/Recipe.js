@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
+import Item from "./item/Item";
 import SearchFood from "./SearchFood";
 import axios from "axios";
 import uuid from "react-uuid";
 import { useStoreContext } from "../../utils/context/GlobalState";
-import { ADD_RECIPE, REMOVE_RECIPE } from "../../utils/context/action";
+import { ADD_RECIPE } from "../../utils/context/action";
+import './recipe.css';
 
 const Recipe = () => {
-  const [state, dispatch] = useStoreContext();
+  const [_, dispatch] = useStoreContext();
   const [recipe, setrecipe] = useState();
   const [search, setSearch] = useState("Ethiopian Food");
   const [isLoading, setIsLoading] = useState(true);
@@ -33,15 +34,6 @@ const Recipe = () => {
       });
   };
 
-  const handleClick = (id) => {
-    const Item = recipe.filter((item) => item.id !== id);
-    setrecipe(Item);
-    dispatch({type: REMOVE_RECIPE, payload:Item.id})
-    console.log(Item)
-    // console.log(recipe);
-    console.log(id)
-  };
-
   const handleSearch = (searchFood) => {
     if (searchFood === "") {
       setSearch("chicken");
@@ -52,38 +44,14 @@ const Recipe = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage:
-          "linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%)",
-        borderTop: "1px solid lightgrey",
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: "row",
-      }}
-    >
+    <div className='recipeContainer'>
       <SearchFood handleSearch={handleSearch} />
-      <h2 style={{ textAlign: "center", color: "black", marginTop: "10px" }}>
+      <h2 className='recipeHeader'>
         recipes
       </h2>
-      <div
-        style={{
-          width: "100vw",
-          // border: "1px solid red",
-          padding: "30px",
-          display: "flex",
-          flexWrap: "wrap",
-          margin: "0 auto",
-        }}
-      >
-        {isLoading
-          ? "Loading..."
-          : (<Item />)
-          // state.recipe[0].map((hit) => (
-          // <Item {...hit} key={uuid()} handleClick={handleClick} />
-            }
+      <div className='recipeLoading'>
+        {isLoading ? "Loading..." : (<Item />)}
       </div>
-
     </div>
   );
 };

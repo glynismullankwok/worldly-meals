@@ -30,7 +30,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        International Ingredients to Worldly Meals
+                         Worldly Meals
                         <i className="fas fa-utensils"></i>
                     </Link>
 
@@ -52,14 +52,20 @@ function Navbar() {
                         </li>
 
                         <li className='nav-item'>
-                            <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
-                                Nutrition
+                            <Link to='/order' className='nav-links' onClick={closeMobileMenu}>
+                                Order
                             </Link>
                         </li>
 
                         <li className='nav-item'>
+                            <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
+                                Nutrition
+                            </Link>
+                        </li>
+                        
+                        <li className='nav-item'>
                             <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                Sign Up
+                                Signup
                             </Link>
                         </li>
                         

@@ -2,7 +2,7 @@
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -12,7 +12,7 @@
   
   .navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     max-width: 1500px;
@@ -27,6 +27,10 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+    margin-right: 25%;
+    min-width:400px;
   }
   
   .fa-typo3 {
@@ -35,14 +39,19 @@
   }
   
   .nav-menu {
-    display: grid;
+    display: flex;
+    justify-content: space-around;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 60vw;
+    height: 100%;
+    /* margin-top: 80px; */
     justify-content: end;
     margin-right: 2rem;
+    float:right;
+
   }
   
   .nav-item {

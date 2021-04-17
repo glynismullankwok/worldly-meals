@@ -10,8 +10,8 @@ router.route('/api/user/login', passport.authenticate('local'))
 
 router.route('/api/order')
     .post(recipeController.createOrder)
-
-
+    .get(recipeController.getOrder );
+      
 // .get(recipeController.createRecipe)
 // router.route('api/recipe/:id')
 // .get(recipeController.updateRecipe)

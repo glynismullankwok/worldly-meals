@@ -1,0 +1,22 @@
+.recipeContainer {
+    background-image:
+    linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    border-top: 1px solid lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+ .recipeHeader { 
+     text-align: center; 
+     color: black; 
+     margin-top: 10px 
+    }
+.recipeLoading{
+    width: 100vw;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+}

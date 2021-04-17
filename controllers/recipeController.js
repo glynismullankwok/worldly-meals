@@ -29,22 +29,28 @@ module.exports = {
     },
 
     createOrder: async (req, res) => {
-        console.log('newOrder')
-        Order.create(req.body)
-            .then(orderData => {
-                res.json(orderData)
+        const myOrder = {
+            id: req.body.id,
+            title: req.body.title,
+            image: req.body.image,
+            price: req.body.price,
+        };
+        Order.create(myOrder)
+            .then((orderData) => {
+                res.json(orderData);
+                console.log("==> ", orderData);
             })
-            .catch(err => {
-                console.log(err)
-                res.status(500).send()
-            })
-        // const newOrder = await { title: req.body.title, catagory: req.body.catagory, calory: req.body.calory, image: req.body.image }
-        // newOrder.save((err, savedOrder) => {
-        //     if (err) return res.json(err)
-        //     res.json(savedOrder)
-        // })
-
+            .catch((err) => {
+                console.log(err);
+                res.status(500).send();
+            });
     },
+
+    getOrder: async (req, res) => {
+        Order.find({}).then((orderData) => {
+            res.send(orderData);
+        });
+    }
 
 
     // getRecipes: function (req, res) {
