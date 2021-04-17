@@ -1,26 +1,28 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 const userSchema = new Schema({
     username: {
         type: String,
         required: 'A username is required'
     },
-    // email:{
-    //     type:String,
-    //     required:'email is required'
-    // },
+    email: {
+        type: String,
+        required: 'email is required',
+    },
     password: {
         type: String,
-        required: 'A password is requred'
+        required: 'A password is requred',
     }
 })
 // Define Schema methods
 userSchema.methods = {
     checkPassword: (inputPassword) => {
+        console.log('inputPassword')
         return bcrypt.compareSync(inputPassword, this.password);
     },
     hashPassword: (plainTextPassword) => {
+        console.log('plainTextPassword')
         return bcrypt.hashSync(plainTextPassword, 10);
     },
 };

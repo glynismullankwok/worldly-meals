@@ -1,22 +1,34 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 
 class Login extends Component {
     state = {
-        username: '',
+        email: '',
         password: ''
-
     }
+
     handleInputChange = e => {
         const { name, value} = e.target
         this.setState({ [name]: value })
     // console.log( e.target.name, e.target.value)
-
     }
+
     handleSubmit = e =>{
         e.preventDefault()
-        console.log('Submitting...', this.state.username, this.state.password )
-        localStorage.setItem('fullname', `{this.state.username} ${this.state.password}`)
+        localStorage.setItem('fullname', `{this.state.email} ${this.state.password}`)
+        const Userlog = {
+            email: this.state.email,
+            password:this.state.password
+        }
+        // console.log('Submitting...', Userlog)
+        axios.post('/api/user/login', Userlog ).then(res => console.log('Userlog', res.data));
+        
+       this.setState( {
+            email: '',
+            password: ''
+        })
     }
+    
     render() {
         return (
             <div className="Container">
@@ -25,10 +37,10 @@ class Login extends Component {
                 {/* <p>Hello {this.state.firstName} {this.state.lastName}</p> */}
                 < form onSubmit={this.handleSubmit}>
                     <div className="row">
-                        <lable> Username</lable><br />
+                        <lable> Enter Email</lable><br />
                         <input
-                         name="username" 
-                         value={this.state.username}
+                         name="email" 
+                         value={this.state.email}
                         onChange={this.handleInputChange}
                         type="text" 
                         />

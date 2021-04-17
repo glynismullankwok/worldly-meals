@@ -1,14 +1,14 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { StoreProvider as Provider } from "./utils/context/GlobalState";
 import Digest from "./components/member/Digest";
-import Ingredient from "./components/member/Ingredient";
+import Ingredient from "./components/member/ingredient/Ingredient";
 import Recipe from "./components/member/Recipe";
-import Item from "./components/member/Item";
+import Order from "./components/member/order/Order";
+import Item from "./components/member/item/Item";
 import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
-// import Home from "./pages/Home";
 import FoodDatabase from "./components/member/FoodDatabase"
 import './App.css';
 import Home from './components/pages/Home';
@@ -33,6 +33,9 @@ function App() {
               </Route>
               <Route exact path="/recipe">
                 <Recipe />
+              </Route>
+              <Route exact path="/order">
+                <Order />
               </Route>
               <Route exact path="/item">
                 < Item/>

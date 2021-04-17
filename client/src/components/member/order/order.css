@@ -1,0 +1,22 @@
+table,
+td {
+  border: 1px solid black;
+  /* border-collapse: collapse; */
+}
+tr {
+  margin-left: 30%;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+  max-width: 150px;
+}
+th {
+  border: 1px solid black;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}

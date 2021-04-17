@@ -10,7 +10,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "seed": "node scripts/seedDB.js"
   },
   "author": "",
@@ -23,6 +23,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "if-env": "^1.0.4",
     "mongoose": "^5.12.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
