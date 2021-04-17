@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NEW_ORDER } from "../../../utils/context/action";
+import { NEW_ORDER, PICKUP_ORDER } from "../../../utils/context/action";
 import { useStoreContext } from "../../../utils/context/GlobalState";
 import axios from "axios";
 import "./order.css";
@@ -7,6 +7,7 @@ import "./order.css";
 function Order() {
   const [state, dispatch] = useStoreContext();
   const [isLoading, setIsLoading] = useState(true);
+  const [pickup, setPickup] = useState(false)
   useEffect(() => {
     fetchOrder();
   }, []);
@@ -16,6 +17,17 @@ function Order() {
       setIsLoading(false);
     });
   };
+  const pickupOrder = (id) => {
+    console.log(id)
+    // axios.delete("/api/books/" + id)
+    // axios.delete('/api/order/' + id).then((res) =>{
+    //   console.log(res)
+    //   dispatch({ type: PICKUP_ORDER, payload: res });
+    // })
+    dispatch({ type: PICKUP_ORDER, payload: id });
+
+    // setPickup(true)
+  }
   return (
     <>
       {isLoading ? (
@@ -51,9 +63,9 @@ function Order() {
                     <p>{order.id}</p>
                   </td>
                   <td>
-                    <p>{order.title}</p>{" "}
-                    <button
-                      style={{
+                    <p>{order.title}</p>
+                    <button onClick={() => pickupOrder(order.id)}
+                      style={pickup?({backgroundColor:'red'}):{
                         float: "right",
                         marginTop: "-35px",
                         marginRight: "30px",
