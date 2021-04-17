@@ -43,8 +43,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 
 })
-const uri = process.env.MONGODB_URL
-// || "mongodb://localhost/nutrints"
+const uri = process.env.MONGODB_URL || "mongodb://localhost/nutrints"
 mongoose.connect(uri,
   {
     useNewUrlParser: true,
