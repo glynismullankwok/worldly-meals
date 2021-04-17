@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const passport = require('./passport');
 const apiRoutes = require('./routes/api-route');
 const app = express()
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -48,10 +48,12 @@ const uri = process.env.MONGODB_URL
 mongoose.connect(uri,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   
-  }).then(() => console.log('mongodb connected'))
-  .catch(error => console.log('mongodb connection', error));
+  }).then(() => console.log('MongoDB connected'))
+  .catch(error => console.log('MongoDB connection', error));
 
 
 app.listen(PORT, () => {

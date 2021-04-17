@@ -39,7 +39,7 @@ const Item = () => {
                 borderRadius: "0.5rem",
               }}
             >
-              {" "}
+              
               {Items.hit.recipe.label}
             </h1>
           )}
@@ -57,8 +57,7 @@ const Item = () => {
               <img
                 src={Items.hit.recipe.image}
                 alt=""
-              />
-
+              />            
               <h2> {Items.hit.recipe.label}</h2>
               <h3>Price: ${Items.price}</h3>
               <p>
