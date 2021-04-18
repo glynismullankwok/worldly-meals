@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const passport = require('./passport');
 const apiRoutes = require('./routes/api-route');
 const app = express()
+require('dotenv').config()
+
 const PORT = process.env.PORT || 5000;
 
 // Define middleware here
@@ -48,10 +50,12 @@ const uri = process.env.MONGODB_URL
 mongoose.connect(uri,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   
-  }).then(() => console.log('mongodb connected'))
-  .catch(error => console.log('mongodb connection', error));
+  }).then(() => console.log('MongoDB connected'))
+  .catch(error => console.log('MongoDB connection', error));
 
 
 app.listen(PORT, () => {

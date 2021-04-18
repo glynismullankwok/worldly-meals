@@ -3,7 +3,7 @@ const User = require("../models/user");
 const LocalStrategy = require("passport-local").Strategy;
 const strategy = new LocalStrategy(
   {
-    emailField: "email", // not necessary, DEFAULT
+    usernameField: "email", // not necessary, DEFAULT
   },
 
   function (email, password, done) {

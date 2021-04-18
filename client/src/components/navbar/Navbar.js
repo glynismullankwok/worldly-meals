@@ -26,12 +26,14 @@ function Navbar() {
     window.addEventListener('resize', showButton);
 
     return (
+
         <nav className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                     International Ingredients to Worldly Meals
                     {/* <i className="fas fa-utensils"></i> */}
                 </Link>
+
 
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -50,17 +52,26 @@ function Navbar() {
                         </Link>
                     </li>
 
-                    <li className='nav-item'>
-                        <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
-                            Nutrition
-                        </Link>
-                    </li>
 
-                    <li className='nav-item'>
-                        <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-                            Sign Up
-                        </Link>
-                    </li>
+
+                        <li className='nav-item'>
+                            <Link to='/order' className='nav-links' onClick={closeMobileMenu}>
+                                Order
+                            </Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link to='/nutrition' className='nav-links' onClick={closeMobileMenu}>
+                                Nutrition
+                            </Link>
+                        </li>
+                        
+                        <li className='nav-item'>
+                            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
+                                Signup
+                            </Link>
+                        </li>
+
                         
                 </ul>
                 {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
