@@ -16,9 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "bootstrap": "^4.6.0",
     "connect-mongo": "^4.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -26,8 +25,7 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.12.3",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "react-bootstrap": "^1.5.2"
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "concurrently": "^6.0.1",

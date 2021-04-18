@@ -24,7 +24,7 @@ module.exports = {
         });
     },
     deleteOrder: (req, res) => {
-        const id   = req.params
+        const id = req.params
         console.log(id)
         Order.findByIdAndDelete(id)
             .then(orderData => {
