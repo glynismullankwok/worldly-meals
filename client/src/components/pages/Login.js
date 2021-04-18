@@ -31,7 +31,9 @@ class Login extends Component {
     
     render() {
         return (
-            <div>
+            <div className="Container">
+                 <div className="Form-container">
+                     <div className="Text-container">
                 {/* <p>Hello {this.state.firstName} {this.state.lastName}</p> */}
                 < form onSubmit={this.handleSubmit}>
                     <div className="row">
@@ -55,6 +57,8 @@ class Login extends Component {
                     <br />
                     <button type="login">Login</button>
                 </form>
+                </div>
+                </div>
             </div>
         )
     }
