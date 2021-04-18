@@ -76,7 +76,7 @@ function Order() {
                     </button>
                   </td>
                   <td>
-                    <p> {order.price}</p>
+                    <p> ${order.price}</p>
                   </td>
                 </tr>
               ))}
