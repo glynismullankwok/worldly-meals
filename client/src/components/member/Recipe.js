@@ -17,15 +17,12 @@ const Recipe = () => {
   }, [search]);
 
   const fetchFood = () => {
-    // const REACT_APP_APP_ID="a7e4cdd9"
-    // const REACT_APP_API_KEY="efd018e424ec85db972aafa8104f3600"
-
-    // const APP_ID = process.env.REACT_APP_APP_ID;
-    // const API_KEY = process.env.REACT_APP_API_KEY;
+    const APP_ID = process.env.REACT_APP_APP_ID;
+    const API_KEY = process.env.REACT_APP_API_KEY;
     
     axios
       .get(
-        `https://api.edamam.com/search?q=${search}&app_id=a7e4cdd9&app_key=efd018e424ec85db972aafa8104f3600`
+        `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`
       )
       .then(res => {
         // console.log(res.data.hits);
