@@ -19,7 +19,7 @@ const SearchFood = (props) => {
       <input
         type="text"
         className="form-control"
-        placeholder="Username"
+        placeholder="search recipes"
         aria-label="Username"
         aria-describedby="basic-addon1"
         value={searchFood}
