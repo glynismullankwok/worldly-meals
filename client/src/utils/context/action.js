@@ -1,7 +1,7 @@
 export const ADD_RECIPE = "ADD_RECIPE";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
-export const SHOW_DITAIL = "SHOW_DITAIL";
-export const HIDE_DITAIL = "HIDE_DITAIL";
+export const SHOW_DETAIL = "SHOW_DETAIL";
+export const HIDE_DETAIL = "HEDE_DETAIL";
 export const NEW_ORDER = "NEW_ORDER";
 export const PICKUP_ORDER = "PICKUP_ORDER";
 

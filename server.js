@@ -8,7 +8,9 @@ const mongoose = require('mongoose');
 const passport = require('./passport');
 const apiRoutes = require('./routes/api-route');
 const app = express()
-const PORT = process.env.PORT;
+require('dotenv').config()
+
+const PORT = process.env.PORT || 5000;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

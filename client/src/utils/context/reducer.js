@@ -1,4 +1,4 @@
-import { ADD_RECIPE, SHOW_DITAIL, HIDE_DITAIL, REMOVE_RECIPE, NEW_ORDER, PICKUP_ORDER } from "./action";
+import { ADD_RECIPE, SHOW_DETAIL, HIDE_DETAIL, REMOVE_RECIPE, NEW_ORDER, PICKUP_ORDER } from "./action";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,13 +23,13 @@ const reducer = (state, action) => {
         ...state, recipe: [state.recipe[0].filter(item => item.id !== action.payload)]
       }
 
-    case SHOW_DITAIL:
+    case SHOW_DETAIL:
       return {
-        ...state, showDitail: true, ditail: state.recipe[0].map(Item => Item.id === action.payload)
+        ...state, showDetail: true, detail: state.recipe[0].map(Item => Item.id === action.payload)
       }
-    case HIDE_DITAIL:
+    case HIDE_DETAIL:
       return {
-        ...state, ditail: false
+        ...state, detail: false
       }
 
     default: return state;
@@ -38,10 +38,4 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
-
-
-
-
-
-
 
