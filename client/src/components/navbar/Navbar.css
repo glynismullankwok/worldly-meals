@@ -165,3 +165,8 @@
       transition: 250ms;
     }
   }
+  @media screen and (max-width: 425px) {
+    .navbar  {
+      width: 136%;
+    }
+  }

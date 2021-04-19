@@ -101,13 +101,25 @@
   .btnToggle {
     background-color: rgb(243, 189, 128);
     text-decoration: none;
-   border: 2px gray solid;
-   padding:4px 10px 4px 10px;
-   border-radius: 10px;
-   font-size: 19px;
+    border: 2px gray solid;
+    padding:4px 10px 4px 10px;
+     border-radius: 10px;
+    font-size: 19px;
   }
   .btnToggle:hover {
     background-color:rgb(61, 80, 9);
     padding:6px 15px 6px 15px;
     color: white
   }
+  
+  @media screen and (max-width: 425px) {
+    .recipeShow {
+    display: block;
+    width: 140%;
+    font-size: 20px;
+
+    } 
+    .recipeHide {
+      display: column;
+    } 
+}

@@ -21,3 +21,13 @@ video {
 .hero-container .p {
     margin-top: 8px;
 }
+
+@media screen and (max-width: 425px) {
+    .hero-container {
+    width: 135%;
+    } 
+    .recipeLoading{
+        width: 100%;
+        display: column;
+    } 
+}
