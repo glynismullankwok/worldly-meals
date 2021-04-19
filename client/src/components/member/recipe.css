@@ -10,8 +10,9 @@
  .recipeHeader { 
      text-align: center; 
      color: black; 
-     margin-top: 10px 
+     margin-top:10px; 
     }
+
 .recipeLoading{
     width: 100vw;
     padding: 30px;
