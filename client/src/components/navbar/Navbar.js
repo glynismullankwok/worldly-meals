@@ -26,30 +26,33 @@ function Navbar() {
     window.addEventListener('resize', showButton);
 
     return (
-       
-            <nav className='navbar'>
-                <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                         Worldly Meals
-                        <i className="fas fa-utensils"></i>
-                    </Link>
 
-                    <div className='menu-icon' onClick={handleClick}>
-                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                    </div>
+        <nav className='navbar'>
+            <div className='navbar-container'>
+                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    International Ingredients to Worldly Meals
+                    {/* <i className="fas fa-utensils"></i> */}
+                </Link>
 
-                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                        <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Home
-                            </Link>
-                        </li>
 
-                        <li className='nav-item'>
-                            <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
-                                Recipes
-                            </Link>
-                        </li>
+                <div className='menu-icon' onClick={handleClick}>
+                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                </div>
+
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className='nav-item'>
+                        <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                            Home
+                        </Link>
+                    </li>
+
+                    <li className='nav-item'>
+                        <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
+                            Recipes
+                        </Link>
+                    </li>
+
+
 
                         <li className='nav-item'>
                             <Link to='/order' className='nav-links' onClick={closeMobileMenu}>
@@ -68,12 +71,12 @@ function Navbar() {
                                 Signup
                             </Link>
                         </li>
+
                         
-                    </ul>
-                    {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
-                </div>
-            </nav>
-       
+                </ul>
+                {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+            </div>
+        </nav>     
     );
 }
 
