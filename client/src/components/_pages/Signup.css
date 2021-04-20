@@ -1,7 +1,8 @@
 .Container {
     position: relative;
-    margin-left: 30%; 
-}
+    margin-left: 30%;    
+};
+
 .Form-container {
     width: 400px;
     align-self: center;
@@ -12,21 +13,24 @@
     margin-left: 50px;
     margin-right: 25rem;
     
+    border: 3px solid green;
     padding: 10px;
-}
+    align-items: center;
+};
+
 .Text-container {
     text-align: center;
     font-size: larger;
-}
+};
+
 input {
     padding: 5px;
-    font-size:15px;
+    font-size: 15px;
 };
 
 button {
     padding: 7px;
     font-size: 20px;
-
 };
 
 button:hover {
@@ -35,11 +39,11 @@ button:hover {
 };
 
 @media screen and (max-width: 425px) {
-.Form-container {
+    .Form-container {
     align-items: center;
     width: 100%;
     margin-top: 50px;
     margin-left: 60px;
     margin-right: 10px;
-    }    
+    }   
 };

@@ -30,14 +30,15 @@
   
 .recipeShow {
   background-color: white;
+  width: 96%;
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
   box-shadow: 5px 10px 8px #888888;
-  margin-bottom: 60px;
   padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 60px;
 }
   .divMe {
     width: 100%;
@@ -101,13 +102,19 @@
   .btnToggle {
     background-color: rgb(243, 189, 128);
     text-decoration: none;
-   border: 2px gray solid;
-   padding:4px 10px 4px 10px;
-   border-radius: 10px;
-   font-size: 19px;
+    border: 2px gray solid;
+    padding:4px 10px 4px 10px;
+     border-radius: 10px;
+    font-size: 19px;
   }
   .btnToggle:hover {
     background-color:rgb(61, 80, 9);
     padding:6px 15px 6px 15px;
     color: white;
+<<<<<<< HEAD
   }
+=======
+  }
+  
+  
+>>>>>>> 26b09f738d1dbd482acfb587669f4efbb609fec8

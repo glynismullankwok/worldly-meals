@@ -45,7 +45,7 @@ const Item = () => {
                 </>
               )}
 
-              <img className={!showDetail && 'divMe'}
+              <img className='divMe'
                 src={Items.hit.recipe.image}
                 alt=""
               />

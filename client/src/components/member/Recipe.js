@@ -46,10 +46,11 @@ const Recipe = () => {
   return (
     <div className='recipeContainer'>
       <SearchFood handleSearch={handleSearch} />
-      <h2 className='recipeHeader'>
-        recipes
-      </h2>
       <div className='recipeLoading'>
+      <h1 className='recipeHeader'>
+        Recipes
+      </h1>
+
         {isLoading ? "Loading..." : (<Item />)}
       </div>
     </div>

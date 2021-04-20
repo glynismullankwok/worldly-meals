@@ -9,8 +9,9 @@ video {
 .hero-container {
     /* background: url('') center center/cover
     no-repeat; */
-    height: 150px;
+    height: auto;
     width: 100%;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +19,44 @@ video {
     object-fit: contain;
 }
 
-.hero-container .p {
+.p {
     margin-top: 8px;
+}
+
+
+.hero-btns {
+    padding: 5px;
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 601px) {
+    h1 {
+        font-size: 22px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+  
+/* If the screen size is 600px or less, set the smaller font-size */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 16px;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 175px;
+    }
+}
+
+/* If the screen size is 300px or less, set the smaller font-size */
+@media only screen and (max-width: 300px) {
+    h1 {
+        font-size: 12px;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 125px;
+    }
+
 }
