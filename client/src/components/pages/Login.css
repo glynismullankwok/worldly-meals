@@ -1,22 +1,20 @@
 .Container {
-    position: relative;
-   
-    
+    position: relative;  
 }
+
 .Form-container {
-    width: 400px;
-    height: 450px;
+    width: 300px;
+    height: 275px;
     align-self: center;
     background-color: beige;
-    
     margin-top: 30rem;
     margin-bottom: 50rem;
     margin-left: 25rem;
     margin-right: 25rem;
-    
     border: 3px solid green;
     padding: 10px;
 }
+
 .Text-container {
     margin-top: 8rem;
     text-align: center;

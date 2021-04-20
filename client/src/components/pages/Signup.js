@@ -43,7 +43,7 @@ class Signup extends Component {
                         <lable> Username</lable><br />
                         <input
                             name="username"
-                            placeholder="Full Name"
+                            placeholder="username"
                             value={this.state.username}
                             onChange={this.handleInputChange}
                             type="text"
@@ -51,7 +51,7 @@ class Signup extends Component {
                     </div>
 
                     <div className="row">
-                        <lable> email</lable><br />
+                        <lable> Email</lable><br />
                         <input
                             name="email"
                             placeholder="email"

@@ -97,7 +97,7 @@
     margin-right: 20px;
   }
   
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1115px) {
     .NavbarItems {
       position: relative;
     }
@@ -202,12 +202,23 @@
   }
 
   /* If the screen size is 300px or less, set the smaller font-size */
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 425px) {
     .navbar-logo {
         font-size: 12px;
-        text-align: center;
-        justify-content: center;
+        text-align: left;
+        justify-content: left;
         word-wrap: break-word;
         max-width: 50px;
     }
   }
+
+    /* If the screen size is 300px or less, set the smaller font-size */
+    @media only screen and (min-width: 300px) {
+      .navbar-logo:before {
+          font-size: 12px;
+          text-align: left;
+          justify-content: left;
+          word-wrap: break-word;
+          max-width: 50px;
+      }
+    }

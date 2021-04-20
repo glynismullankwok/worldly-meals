@@ -1,24 +1,43 @@
 .Container {
-    position: relative;
-   
-    
+    /* position: relative; */
+    justify-content: center;
 }
+
 .Form-container {
-    width: 400px;
-    height: 450px;
+    width: 300px;
+    height: 275px;
     align-self: center;
     background-color: beige;
-    
-    margin-top: 30rem;
+    margin: auto !important;
+    margin-top: 10rem !important;
     margin-bottom: 50rem;
     margin-left: 25rem;
     margin-right: 25rem;
-    
     border: 3px solid green;
     padding: 10px;
 }
+
 .Text-container {
-    margin-top: 8rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center;
     font-size: larger;
 }
+
+  /* If the screen size is 300px or less, set the smaller font-size */
+  @media only screen and (max-width: 425px) {
+    .Text-container {
+        font-size: smaller;
+        word-wrap: break-word;
+        margin-top: 15px;
+    }
+  }
+
+    /* If the screen size is 300px or less, set the smaller font-size */
+    @media only screen and (min-width: 300px) {
+        .Text-container {
+            font-size: smaller;
+            word-wrap: break-word;
+            margin-top: 15px;
+        }
+      }
