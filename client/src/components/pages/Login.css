@@ -1,24 +1,52 @@
 .Container {
-    position: relative;
-   
-    
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;   
+        
 }
 .Form-container {
     width: 400px;
-    height: 450px;
     align-self: center;
     background-color: beige;
-    
-    margin-top: 30rem;
-    margin-bottom: 50rem;
-    margin-left: 25rem;
-    margin-right: 25rem;
-    
-    border: 3px solid green;
-    padding: 10px;
+    margin: 0 auto;
+    margin-top: 5rem;
+    border: 1px solid gray;
+    padding: 10px 0px 40px 0px;
+    box-shadow: 5px 5px 5px 5px  lightgray;
 }
 .Text-container {
-    margin-top: 8rem;
     text-align: center;
     font-size: larger;
+    width: 80%;
+    margin: 0 auto;
+
 }
+.row{
+    margin-top: 1rem;
+}
+
+input {
+    padding: 5px;
+    font-size:15px;
+    width: 100%
+};
+
+button {
+    padding:7px;
+    font-size:20px;
+    border: 2px red solid;
+
+};
+
+button:hover {
+    background-color: rgb(23, 36, 109);
+    color: white;
+};
+
+@media screen and (min-width: 425px) {
+.Form-container {
+    align-items: center;
+    width: 100%;
+    margin:0 auto;
+    } 
+};

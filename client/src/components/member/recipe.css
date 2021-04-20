@@ -11,6 +11,7 @@
      text-align: center; 
      color: black; 
      margin-top:10px; 
+     width: 100%;
     }
 
 .recipeLoading{
@@ -20,6 +21,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 auto;
+}
+.search-span{
+    background-color: red;
 }
 @media screen and (max-width: 425px) {
     .recipeContainer {

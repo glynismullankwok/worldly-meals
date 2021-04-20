@@ -11,7 +11,6 @@ const passport = require('./passport');
 
 const apiRoutes = require('./routes/api-route');
 const app = express();
-require('dotenv').config();
 
 const PORT = process.env.PORT;
 
