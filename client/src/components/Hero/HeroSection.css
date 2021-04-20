@@ -23,6 +23,7 @@ video {
     margin-top: 8px;
 }
 
+
 .hero-btns {
     padding: 5px;
     justify-content: center;
@@ -57,4 +58,5 @@ video {
         word-wrap: break-word;
         max-width: 125px;
     }
+
 }
