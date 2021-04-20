@@ -1,13 +1,13 @@
 .order{
-border: 1px gray solid;
-border-radius: 1rem;
-padding: 1rem;
-width: 90vw;
-margin: 0 auto;
-margin-top: 1rem;
+  border: 1px gray solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 1rem;
 }
 .order h1{
-  text-align: center;
+text-align: center;
 }
 
 .order-title { 
@@ -15,6 +15,7 @@ margin-top: 1rem;
   border-top-right-radius:1rem ;
   border-top-left-radius:1rem ;
   padding: 1rem;
+  margin: 0 auto;
   text-align: center;
   display: flex; 
   flex-direction: row; 
@@ -23,27 +24,31 @@ margin-top: 1rem;
 
 .content{
   border: 1px solid gray;
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-around; 
-    text-align: center;  
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around; 
+  text-align: center;  
 }
 
 .head-img{
-width: 10%;
-margin-top: 20px;
+  width: 10%;
+  margin-top: 20px;
+  margin-right: 15px;
+
 }
 
 .head-img img{
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 
 .num {
   width: 30%;
   font-size: 18px;
   margin-top: 20px;
+  margin-left: 10px;
+
 }
 
 .title{
@@ -58,8 +63,15 @@ margin-top: 20px;
   margin-top: 20px;
 }
 .order-btn{
-    float: right;
-    margin-top: -35px;
-    margin-right: 30px;
-    background-color: lightgreen;
+  float: right;
+  margin-top: -35px;
+  margin-right: 30px;
+  background-color: lightgreen;
+}
+@media screen and (max-width: 425px) {
+.order {
+    width: 134vw;
+    margin: 0 auto;
+}
+
 }

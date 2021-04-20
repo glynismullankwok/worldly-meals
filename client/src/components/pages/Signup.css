@@ -1,31 +1,40 @@
 .Container {
-    position: relative;
-    margin-left: 30%; 
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;   
+        
 }
 .Form-container {
     width: 400px;
     align-self: center;
     background-color: beige;
-    
+    margin: 0 auto;
     margin-top: 5rem;
-    margin-bottom: 50rem;
-    margin-left: 50px;
-    margin-right: 25rem;
-    
-    padding: 10px;
+    border: 1px solid gray;
+    padding: 10px 0px 40px 0px;
+    box-shadow: 5px 5px 5px 5px  lightgray;
 }
 .Text-container {
     text-align: center;
     font-size: larger;
+    width: 80%;
+    margin: 0 auto;
+
 }
+.row{
+    margin-top: 1rem;
+}
+
 input {
     padding: 5px;
     font-size:15px;
+    width: 100%
 };
 
 button {
-    padding: 7px;
-    font-size: 20px;
+    padding:7px;
+    font-size:20px;
+    border: 2px red solid;
 
 };
 
@@ -34,12 +43,10 @@ button:hover {
     color: white;
 };
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 425px) {
 .Form-container {
     align-items: center;
     width: 100%;
-    margin-top: 50px;
-    margin-left: 60px;
-    margin-right: 10px;
-    }    
+    margin:0 auto;
+    } 
 };
