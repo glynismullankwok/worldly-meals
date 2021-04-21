@@ -60,6 +60,9 @@ Thanks to the following people who have contributed to this project:
 * [@DestaMulualem](https://github.com/destish21)
 * [@TracyGolden](https://github.com/tracy80s2003)
 
+## License
+   [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT).
+ 
 
 ### # store2021
 # store2021

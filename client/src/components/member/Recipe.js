@@ -18,7 +18,9 @@ const Recipe = () => {
 
   const fetchFood = () => {
     const APP_ID = process.env.REACT_APP_APP_ID;
+    console.log(APP_ID);
     const API_KEY = process.env.REACT_APP_API_KEY;
+    console.log(API_KEY);
     
     axios
       .get(
