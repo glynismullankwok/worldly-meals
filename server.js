@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 require('dotenv').config();
-// const cors = require('cors');
+const cors = require('cors');
 
 
 // const MongoStore = require('connect-mongo')(session);
@@ -17,7 +17,7 @@ const PORT = process.env.PORT;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 
 
