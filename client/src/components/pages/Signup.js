@@ -56,7 +56,7 @@ class Signup extends Component {
                                 <lable> email</lable><br />
                                 <input
                                     name="email"
-                                    placeholder="email"
+                                    placeholder="Enter Email"
                                     value={this.state.email}
                                     onChange={this.handleInputChange}
                                     type="text"
@@ -67,7 +67,7 @@ class Signup extends Component {
                                 <lable> Password</lable><br />
                                 <input
                                     name="password"
-                                    placeholder="password"
+                                    placeholder="Enter password"
                                     value={this.state.password}
                                     onChange={this.handleInputChange}
                                     type="text"
