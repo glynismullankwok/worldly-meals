@@ -27,7 +27,5 @@ module.exports = {
         }else {
             res.json({ user: null })
         };
-    },
-
-  
+    }, 
 }

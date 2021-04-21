@@ -7,7 +7,6 @@ import "./order.css";
 function Order() {
   const [state, dispatch] = useStoreContext();
   const [isLoading, setIsLoading] = useState(true);
-  const [pickup, setPickup] = useState(false)
   useEffect(() => {
     fetchOrder();
   }, []);
@@ -25,62 +24,63 @@ function Order() {
     //   dispatch({ type: PICKUP_ORDER, payload: res });
     // })
     dispatch({ type: PICKUP_ORDER, payload: id });
-
-    // setPickup(true)
   }
+  
   return (
     <>
       {isLoading ? (
         "Loading..."
       ) : (
-        <div>
-          <h1 style={{ textAlign: "center" }}> Orders </h1>
 
-          <table style={{ width: "100%" }}>
-            <tr>
-              <th>Image</th>
-              <th>Order Number</th>
-              <th>Title</th>
-              <th>Price</th>
-            </tr>
+        <div className="order" >
+          <h1> Orders </h1>
+          <div className="order-title">
 
-            {state.orders !== [] &&
-              state.orders[0].map((order) => (
-                <tr>
-                  <td>
-                    <img
-                      style={{
-                        height: "80px",
-                        width: "80px",
-                        borderRadius: "50%",
-                        marginLeft: "30%",
-                      }}
-                      src={order.image}
-                      alt=""
-                    />
-                  </td>
-                  <td>
-                    <p>{order.id}</p>
-                  </td>
-                  <td>
-                    <p>{order.title}</p>
-                    <button onClick={() => pickupOrder(order.id)}
-                      style={pickup?({backgroundColor:'red'}):{
-                        float: "right",
-                        marginTop: "-35px",
-                        marginRight: "30px",
-                        backgroundColor: "lightgreen",
-                      }}
-                    >
-                      Pick Up
+            <div className=" head head-img">
+              <h2>Image</h2>
+
+            </div>
+            <div className="head num">
+              <h2>Order Number</h2>
+            </div>
+            <div className="head title">
+              <h2>Title</h2>
+            </div>
+            <div className="head myPrice">
+              <h2>Price</h2>
+            </div>
+          </div>
+
+          {state.orders !== [] &&
+            state.orders[0].map((order) => (
+
+              <div className="content">
+
+                <div className=" head head-img">
+
+                  <img
+
+                    src={order.image}
+                    alt=""
+                  />
+                </div>
+                <div className="head num">
+                  <p>{order.id}</p>
+                </div>
+                <div className="head title">
+                  <p>{order.title}</p>
+
+                </div>
+                <div className="head myPrice">
+                  <p> ${order.price}</p>
+                  <br /><br />
+                  <button className='order-btn' onClick={() => pickupOrder(order.id)}
+                  >
+                    Pick Up
                     </button>
-                  </td>
-                  <td>
-                    <p> {order.price}</p>
-                  </td>
-                </tr>
-              ))}
-          </table>
+                </div>
+              </div>
+            ))}
         </div>
       )}
     </>

@@ -14,7 +14,7 @@ const userSchema = new Schema({
         type: String,
         required: 'A password is requred',
     }
-})
+});
 // Define Schema methods
 userSchema.methods = {
     checkPassword: (inputPassword) => {
