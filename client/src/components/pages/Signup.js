@@ -35,50 +35,6 @@ class Signup extends Component {
     render() {
         return (
             <div className="Container">
-<<<<<<< HEAD
-                 <div className="Form-container">
-                     <div className="Text-container">
-                
-                {/* <p>Hello {this.state.firstName} {this.state.lastName}</p> */}
-                < form onSubmit={this.handleSubmit}>
-               
-                <div className="row">
-                        <lable> Username</lable><br />
-                        <input
-                            name="username"
-                            placeholder="username"
-                            value={this.state.username}
-                            onChange={this.handleInputChange}
-                            type="text"
-                        />
-                    </div>
-
-                    <div className="row">
-                        <lable> Email</lable><br />
-                        <input
-                            name="email"
-                            placeholder="email"
-                            value={this.state.email}
-                            onChange={this.handleInputChange}
-                            type="text"
-                        />
-                    </div>
-
-                    <div className="row">
-                        <lable> Password</lable><br />
-                        <input
-                            name="password"
-                            placeholder="password"
-                            value={this.state.password}
-                            onChange={this.handleInputChange}
-                            type="text"
-                        />
-                    </div>
-                    <br />
-                    <button type="signup">Submit</button>
-                </form>
-                </div>
-=======
                 <div className="Form-container">
                     <div className="Text-container">
 
@@ -121,7 +77,6 @@ class Signup extends Component {
                             <button type="signup">Submit</button>
                         </form>
                     </div>
->>>>>>> main
                 </div>
             </div>
         );
