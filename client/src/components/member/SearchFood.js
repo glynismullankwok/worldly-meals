@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import './recipe.css'
 
 const SearchFood = (props) => {
   //const [count, dispatch] = useContext(TryContext);
@@ -12,7 +13,7 @@ const SearchFood = (props) => {
   // };
   return (
     <div
-      style={{ width: "25%", margin: "10px 0px 0px 20%",display:'flex' }}
+      style={{ width: "25%", margin: "10px 0px 60px 20%", display: 'flex' }}
       className="input-group mb-3"
     >
       <input
@@ -28,25 +29,15 @@ const SearchFood = (props) => {
           setSearchFood(e.target.value);
         }}
       />
-      <span
-        className="search-span"
+      <button className="search-btn"
         type="submit"
         onClick={() => {
           props.handleSearch(searchFood);
           setSearchFood("");
-        }}
-        style={{
-          backgroundColor: "white",
-          cursor: "pointer",
-          border: "1px solid lightgray",
-          fontSize: "2rem"
-
-        }}
-      >
-        <BsSearch />
-      </span>
+        }}><BsSearch /></button>
     </div>
   );
 };
-
 export default SearchFood;
+
+

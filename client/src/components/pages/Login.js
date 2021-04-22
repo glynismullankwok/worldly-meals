@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { withRouter } from 'react-router-dom';
 import './Login.css'
-
 
 class Login extends Component {
     state = {
@@ -22,7 +22,7 @@ class Login extends Component {
             password: this.state.password
         }
         // console.log('Submitting...', Userlog)
-        axios.post('/api/user/login', Userlog).then(res => console.log('Userlog', res.data));
+        axios.post('/api/user/login', Userlog).then(res => this.props.history.push('/recipe'));
         localStorage.setItem('fullname', `{this.state.email} ${this.state.password}`)
         this.setState({
             email: '',
@@ -66,7 +66,7 @@ class Login extends Component {
         )
     }
 }
-export default Login;
+export default withRouter(Login);
 
 
 

@@ -5,12 +5,14 @@ import Digest from "../Digest";
 import Ingredient from "../ingredient/Ingredient";
 import { REMOVE_RECIPE, NEW_ORDER } from '../../../utils/context/action'
 import { useStoreContext } from '../../../utils/context/GlobalState'
+import { useHistory } from 'react-router-dom'
 import './item.css'
 
 const Item = () => {
   // console.log(`=====>`, state)
-  const [state, dispatch] = useStoreContext()
-  const [showDetail, setShowDetail] = useState(false)
+  const [state, dispatch] = useStoreContext();
+  const [showDetail, setShowDetail] = useState(false);
+  const history= useHistory();
 
   const submitOrder = (id, title, image, price) => {
     const order = {
@@ -21,6 +23,7 @@ const Item = () => {
     };
     axios.post('/api/order', order).then((res) => {
       dispatch({ type: NEW_ORDER, payload: res.data });
+      history.push('/order')
     });
   };
 

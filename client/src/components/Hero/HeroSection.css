@@ -23,13 +23,26 @@ video {
     margin-top: 8px;
 }
 
-
 .hero-btns {
     padding: 5px;
-    justify-content: center;
+    justify-content: space-around;
+    width: 300px;
     display: flex;
-    margin-top: 10px;
+    margin: 20px;
     flex-wrap: wrap;
+    /* border: 2px red solid; */
+}
+.btns {
+    background-color: rgb(22, 28, 47);
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding:8px 20px 8px 20px;
+    border-radius: 10%;
+}
+.btns:hover{
+    background-color: rgb(7, 57, 97);
+    padding: 9px 22px 9px 22px;
 }
 
 @media only screen and (min-width: 601px) {
@@ -59,4 +72,9 @@ video {
         max-width: 125px;
     }
 
+}
+@media screen and (max-width: 425px) {
+    .hero-container {
+    width: 135%;
+    }    
 }
