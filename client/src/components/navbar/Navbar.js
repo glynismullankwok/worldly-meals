@@ -8,24 +8,24 @@ const Navbar = () => {
     const history = useHistory()
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
-            setButton(false)
+            setButton(false);
         } else {
             setButton(true);
         }
     };
     useEffect(() => {
-        Login()
+        Login();
     }, []);
 
     useEffect(() => {
-        Logout()
-    }, [])
+        Logout();
+    }, []);
 
     const Login = () => {
         // e.preventDefault()
@@ -36,15 +36,13 @@ const Navbar = () => {
                 setLoggedIn(true)
                 console.log('hide nave')
                 history.push('/recipe')
-            }
-            else {
+            }else {
                 console.log('show nave')
-
                 setLoggedIn(false)
-            }
+            };
 
-        })
-    }
+        });
+    };
 
     const Logout = () => {
         // e.preventDefault()
@@ -53,17 +51,17 @@ const Navbar = () => {
             console.log(res)
             if (res.data) {
                 setLoggedIn(false)
-                console.log('hide nave')
+                console.log('hide navbar')
                 history.push('/')
             }else {
-                console.log('show nave')
+                console.log('show navbar')
                 setLoggedIn(true)
             }
         })
     }
 
     useEffect(() => {
-        showButton()
+        showButton();
 
     }, []);
 
@@ -78,6 +76,7 @@ const Navbar = () => {
                             International Ingredients to Worldly Meals
                     {/* <i className="fas fa-utensils"></i> */}
                         </Link>
+
                         <div className='menu-icon' onClick={handleClick}>
                             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                         </div>
@@ -113,6 +112,7 @@ const Navbar = () => {
                             </Link>
                             </li> */}
                         </ul>
+                        
                         {/* {button && <Button buttonStyle='btn--outline'>Sign up</Button>} */}
                     </div>
                 </nav>

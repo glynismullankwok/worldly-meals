@@ -22,6 +22,7 @@ const Home = () => {
     const fetchFood = () => {
         const APP_ID = process.env.REACT_APP_APP_ID;
         const API_KEY = process.env.REACT_APP_API_KEY;
+        
         axios(`https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`)
             .then(res => {
                 // console.log(res.data.hits);

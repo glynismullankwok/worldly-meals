@@ -7,10 +7,13 @@
     flex-direction: row;
   }
 
- .recipeHeader { 
+.recipeHeader { 
      text-align: center; 
      color: black; 
      margin-top:10px; 
+     margin: 0 auto;
+     font-size: 2.5rem;
+     padding: 1rem;
      width: 100%;
     }
 
@@ -30,6 +33,17 @@
     padding: 10px;
     border-radius: 15%;
 }
+.search-div{
+    width: 30vw; 
+    margin: 10px 0px 60px 20%;
+    display:flex;
+
+}
+
+.form-control{
+    font-size: 30px;
+}
+
 @media screen and (max-width: 425px) {
     .recipeContainer {
     width: 135%;
@@ -38,5 +52,11 @@
         width: 100%;
         display: column;
     } 
+    .search-div{
+        width: 90vw;
+        margin-top: 20px;
+        font-size: 2rem;
+
+    }
 }
   
