@@ -9,6 +9,7 @@ function HeroSection() {
             <video src='https://giphy.com/gifs/masterchef-food-gordon-ramsay-l0MYyKbTCresSjrhK' autoPlay loop muted />
             <p>&nbsp;</p>
             <h1>International Cuisine at Home: Start your culinary adventure here</h1>
+
             <div className='hero-btns'>
                 <Link to='/signup' className='btns' buttonStyle='btn--outline'
                     buttonSize='btn--small'>Sign Up</Link>

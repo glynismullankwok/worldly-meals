@@ -70,6 +70,7 @@ const Navbar = () => {
     window.addEventListener('resize', showButton);
 
     return (
+
         <>
             {!loggedIn ? (
                 <nav className='navbar'>
@@ -153,6 +154,7 @@ const Navbar = () => {
                                 <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                     Logout
                             </Link>
+
                             </li> */}
 
                             <li className='nav-item'>
@@ -166,6 +168,7 @@ const Navbar = () => {
                 </nav>
             )}
         </>
+
     );
 }
 
