@@ -27,6 +27,9 @@
   box-shadow: 5px 10px 8px #888888, -5px -10px 8px #888888;
   border: 1px solid lightgray;
 }
+.recipeHide:hover {
+  box-shadow: 5px 10px 10px #2c2a2a, -5px -10px 10px #2c2a2a;
+}
   
 .recipeShow {
   background-color: white;

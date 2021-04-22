@@ -12,10 +12,7 @@ const SearchFood = (props) => {
   //   dispatch({ type: SET_BALANCE });
   // };
   return (
-    <div
-      style={{ width: "25%", margin: "10px 0px 60px 20%", display: 'flex' }}
-      className="input-group mb-3"
-    >
+    <div className='search-div'>
       <input
         type="text"
         className="form-control"

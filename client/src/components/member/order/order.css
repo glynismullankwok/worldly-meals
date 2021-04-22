@@ -8,6 +8,13 @@
 }
 .order h1{
 text-align: center;
+margin: 0 auto;
+font-size: 2rem;
+padding: 20px;
+box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+border-radius: 20px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .order-title { 
