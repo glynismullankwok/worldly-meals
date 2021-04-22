@@ -24,7 +24,7 @@
   min-width: 350px;
   height: auto;
   padding: 10px;
-  box-shadow: 5px 10px 8px #888888;
+  box-shadow: 5px 10px 8px #888888, -5px -10px 8px #888888;
   border: 1px solid lightgray;
 }
   
