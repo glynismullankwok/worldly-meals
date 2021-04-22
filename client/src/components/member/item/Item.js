@@ -91,7 +91,7 @@ const Item = () => {
                 <div className="btnDiv" >
 
                 <a className='anchor' href={Items.hit.recipe.url}>Third Party</a>
-                <button className='btnToggle' onClick={() => setShowDetail(!showDetail)}> {showDetail ? "hide detail" : "show detail"}</button>
+                <button className='btnToggle' onClick={() => setShowDetail(!showDetail)}> {showDetail ? "Hide Detail" : "Show Detail"}</button>
               </div>
               </>
               )}
