@@ -22,7 +22,7 @@ class Login extends Component {
             password: this.state.password
         }
         // console.log('Submitting...', Userlog)
-        axios.post('/api/user/login', Userlog).then(res => this.props.history.push('/order'));
+        axios.post('/api/user/login', Userlog).then(res => this.props.history.push('/recipe'));
         localStorage.setItem('fullname', `{this.state.email} ${this.state.password}`)
         this.setState({
             email: '',

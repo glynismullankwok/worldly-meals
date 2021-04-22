@@ -22,8 +22,13 @@
     flex-direction: row;
     margin: 0 auto;
 }
-.search-span{
-    background-color: red;
+.search-btn{
+    background-color: rgb(12, 48, 146);
+    width: 60px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15%;
 }
 @media screen and (max-width: 425px) {
     .recipeContainer {

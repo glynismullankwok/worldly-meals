@@ -9,6 +9,15 @@ router.route('/api/user')
 router.route('/api/user/login', passport.authenticate('local'))
     .post(userController.userLogin)
 
+router.post("/api/user/logout", (req, res) => {
+    if (req.user) {
+        req.logout();
+        res.send({ msg: "logging out" });
+    } else {
+        res.send({ msg: "no user to log out" });
+    }
+});
+
 router.route('/api/order')
     .post(recipeController.createOrder)
     .get(recipeController.getOrder)
