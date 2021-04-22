@@ -7,7 +7,7 @@ import './HeroSection.css';
 function HeroSection() {
     return (
         <div className= 'hero-container'>
-            <video src='https://giphy.com/gifs/masterchef-food-gordon-ramsay-l0MYyKbTCresSjrhK' autoPlay loop muted />
+            {/* <video src='https://giphy.com/gifs/masterchef-food-gordon-ramsay-l0MYyKbTCresSjrhK' autoPlay loop muted /> */}
             <p>&nbsp;</p>
             <h1>International Cuisine at Home: Start your culinary adventure here</h1>
             {/* <p>Start your culinary adventure here</p> */}

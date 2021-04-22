@@ -19,6 +19,7 @@
 .Text-container {
     text-align: center;
     font-size: larger;
+    font-family: 'Roboto', sans-serif;
     width: 80%;
     margin: 0 auto;
 
@@ -30,12 +31,14 @@
 input {
     padding: 5px;
     font-size:15px;
+    font-family: 'Roboto', sans-serif;
     width: 100%
 };
 
 button {
     padding:7px;
     font-size:20px;
+    font-family: 'Roboto', sans-serif;
     border: 2px red solid;
 
 };

@@ -1,5 +1,5 @@
 :root {
-  --primary-green: #6fad66;
+  --primary-green: #809CA7;
 }
 
 .navbar {
@@ -8,8 +8,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 999;
   }
@@ -29,6 +30,7 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
     /* height: 100%; */
@@ -40,6 +42,7 @@
   .fa-typo3 {
     margin-left: 0.5rem;
     font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
   }
   
   .nav-menu {
@@ -48,18 +51,18 @@
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     list-style: none;
-    text-align: center;
+    text-align: right;
     width: 60vw;
     height: 100%;
     /* margin-top: 80px; */
-    justify-content: end;
-    margin-right: 2rem;
-    float:right;
+    /* justify-content: end; */
+    /* float:right; */
 
   }
   
   .nav-item {
     height: 80px;
+    float: right;
   }
   
   .nav-links {
@@ -73,6 +76,12 @@
   
   .nav-links:hover {
     border-bottom: 4px solid;
+    color: var(--primary-green) !important;
+    transition: all 0.2s ease-out;
+  }
+
+  .navbar-logo:hover {
+    /* border-bottom: 4px solid; */
     color: var(--primary-green) !important;
     transition: all 0.2s ease-out;
   }
@@ -123,7 +132,7 @@
     }
   
     .nav-links {
-      text-align: center;
+      text-align: right;
       padding: 2rem;
       width: 100%;
       display: table;
@@ -150,6 +159,7 @@
       top: 0;
       right: 0;
       transform: translate(-100%, 60%);
+      font-family: 'Roboto', sans-serif;
       font-size: 1.8rem;
       cursor: pointer;
     }
@@ -157,6 +167,7 @@
     .fa-times {
       color: #fff;
       font-size: 2rem;
+      font-family: 'Roboto', sans-serif;
     }
   
     .nav-links-mobile {
@@ -167,6 +178,7 @@
       width: 80%;
       text-decoration: none;
       font-size: 1.5rem;
+      font-family: 'Roboto', sans-serif;
       background-color: transparent;
       color: #fff;
       padding: 14px 20px;
@@ -191,6 +203,7 @@
   @media only screen and (min-width: 601px) {
     .navbar-logo {
       font-size: 24px;
+      font-family: 'Roboto', sans-serif;
     }
   }
   
@@ -200,6 +213,7 @@
       font-size: 16px;
       word-wrap: break-word;
       max-width: 125px;
+      font-family: 'Roboto', sans-serif;
     }
   }
 
@@ -207,6 +221,7 @@
   @media only screen and (max-width: 425px) {
     .navbar-logo {
         font-size: 12px;
+        font-family: 'Roboto', sans-serif;
         text-align: left;
         justify-content: left;
         word-wrap: break-word;
