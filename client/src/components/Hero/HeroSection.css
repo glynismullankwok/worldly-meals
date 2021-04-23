@@ -9,13 +9,14 @@ video {
 .hero-container {
     /* background: url('') center center/cover
     no-repeat; */
+    font-family: 'Roboto', sans-serif;
     height: auto;
     width: 100%;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    /* box-shadow: inset 0 0 0 1500px rgba(0, 0, 0, 0.2); */
     object-fit: contain;
 }
 
@@ -47,25 +48,37 @@ video {
 
 @media only screen and (min-width: 601px) {
     h1 {
+        font-family: 'Roboto', sans-serif;
         font-size: 22px;
         text-align: center;
         word-wrap: break-word;
     }
 }
+
+/* @media only screen and (min-width: 425px) {
+    .hero-container {
+        width: 100% !important;
+    }
+} */
   
 /* If the screen size is 600px or less, set the smaller font-size */
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 16px;
+        font-size: 32px;
+        max-width: 365px;
+        font-family: 'Roboto', sans-serif;
+        /* font-size: 16px; */
         text-align: center;
         word-wrap: break-word;
-        max-width: 175px;
+        /* max-width: 175px; */
+            
     }
 }
 
 /* If the screen size is 300px or less, set the smaller font-size */
 @media only screen and (max-width: 300px) {
     h1 {
+        font-family: 'Roboto', sans-serif;
         font-size: 12px;
         text-align: center;
         word-wrap: break-word;
