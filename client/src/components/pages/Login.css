@@ -4,6 +4,7 @@
     height: 100vh;   
         
 }
+
 .Form-container {
     width: 400px;
     align-self: center;
@@ -14,9 +15,11 @@
     padding: 10px 0px 40px 0px;
     box-shadow: -5px -5px 5px 5px  lightgray, 5px 5px 5px 5px lightgray;
 }
+
 .Text-container {
     text-align: center;
     font-size: larger;
+    font-family: 'Roboto', sans-serif;
     width: 80%;
     margin: 0 auto;
 
@@ -28,12 +31,14 @@
 input {
     padding: 5px;
     font-size:15px;
+    font-family: 'Roboto', sans-serif;
     width: 100%
 };
 
 button {
     padding:7px;
     font-size:20px;
+    font-family: 'Roboto', sans-serif;
     border: 2px red solid;
 
 };
