@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+// import {useStoreContext} from '../../utils/context/GlobalState';
 import './Navbar.css';
 
 const Navbar = () => {
     const history = useHistory()
+    // const usesStoreContext = useStoreContext()
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
@@ -36,7 +38,7 @@ const Navbar = () => {
                 setLoggedIn(true)
                 console.log('hide nave')
                 history.push('/recipe')
-            }else {
+            } else {
                 console.log('show nave')
                 setLoggedIn(false)
             };
@@ -53,7 +55,7 @@ const Navbar = () => {
                 setLoggedIn(false)
                 console.log('hide navbar')
                 history.push('/')
-            }else {
+            } else {
                 console.log('show navbar')
                 setLoggedIn(true)
             }
@@ -70,12 +72,14 @@ const Navbar = () => {
     return (
 
         <>
-            {!loggedIn ? (
+            {/* {loggedIn.toString()} */}
+
+            {loggedIn ? (
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                            International Ingredients to Worldly Meals
-                    {/* <i className="fas fa-utensils"></i> */}
+                            Worldly Meals
+                             <i className="fas fa-utensils"></i>
                         </Link>
 
                         <div className='menu-icon' onClick={handleClick}>
@@ -113,7 +117,7 @@ const Navbar = () => {
                             </Link>
                             </li> */}
                         </ul>
-                        
+
                         {/* {button && <Button buttonStyle='btn--outline'>Sign up</Button>} */}
                     </div>
                 </nav>
@@ -122,10 +126,9 @@ const Navbar = () => {
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                            International Ingredients to Worldly Meals
-                    {/* <i className="fas fa-utensils"></i> */}
+                            Worldly Meals
+                       <i className="fas fa-utensils"></i>
                         </Link>
-
 
                         <div className='menu-icon' onClick={handleClick}>
                             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -137,6 +140,12 @@ const Navbar = () => {
                                     Home
                         </Link>
                             </li>
+
+                            {/* <li className='nav-item'>
+                                <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
+                                    Login
+                            </Link>
+                            </li> */}
 
                             {/* <li className='nav-item'>
                                 <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
@@ -162,6 +171,7 @@ const Navbar = () => {
                                     Signup
                             </Link>
                             </li>
+
                         </ul>
                         {/* {button && <Button buttonStyle='btn--outline'>Sign up</Button>} */}
                     </div>
