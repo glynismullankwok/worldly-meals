@@ -13,7 +13,7 @@
     margin-top: 5rem;
     border: 1px solid gray;
     padding: 10px 0px 40px 0px;
-    box-shadow: 5px 5px 5px 5px  lightgray;
+    box-shadow: -5px -5px 5px 5px  lightgray, 5px 5px 5px 5px lightgray;
 }
 
 .Text-container {

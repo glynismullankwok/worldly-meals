@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { withRouter } from 'react-router-dom';
 import './Signup.css';
 
 class Signup extends Component {
@@ -22,7 +23,10 @@ class Signup extends Component {
         }
         console.log(UserInfo)
 
-        axios.post('/api/user', UserInfo).then(res => console.log("Signed User ", res))
+        axios.post('/api/user', UserInfo).then(res => {
+            console.log("Signed User ", res)
+            this.props.history.push('/login')
+        })
         localStorage.setItem('fullname', `{this.state.email} ${this.state.username} ${this.state.password}`)
         this.setState({
             username: '',
@@ -56,7 +60,7 @@ class Signup extends Component {
                                 <lable> email</lable><br />
                                 <input
                                     name="email"
-                                    placeholder="email"
+                                    placeholder="Enter Email"
                                     value={this.state.email}
                                     onChange={this.handleInputChange}
                                     type="text"
@@ -67,7 +71,7 @@ class Signup extends Component {
                                 <lable> Password</lable><br />
                                 <input
                                     name="password"
-                                    placeholder="password"
+                                    placeholder="Enter password"
                                     value={this.state.password}
                                     onChange={this.handleInputChange}
                                     type="text"
@@ -82,7 +86,7 @@ class Signup extends Component {
         );
     };
 };
-export default Signup;
+export default withRouter(Signup);
 
 
 

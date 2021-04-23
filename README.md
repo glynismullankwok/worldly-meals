@@ -45,7 +45,7 @@ XX
 
 ### Application Deployment Link - Heroku
 
-[International Ingredients to Wordly Meals](https://XX)
+[International Ingredients to Wordly Meals](https://aqueous-ocean-13819.herokuapp.com/)
 
 ### Repository
 
@@ -64,5 +64,3 @@ Thanks to the following people who have contributed to this project:
    [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT).
  
 
-### # store2021
-# store2021

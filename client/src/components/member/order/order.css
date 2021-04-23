@@ -8,26 +8,36 @@
 }
 .order h1{
 text-align: center;
+margin: 0 auto;
+font-size: 2rem;
+padding: 20px;
+box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+border-radius: 20px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .order-title { 
   background-color: wheat;
-  border-top-right-radius:1rem ;
-  border-top-left-radius:1rem ;
+  border-radius:1rem ;
   padding: 1rem;
   margin: 0 auto;
   text-align: center;
   display: flex; 
   flex-direction: row; 
   justify-content: space-around; 
+  box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+  border-radius: 10px;
 }
-
 .content{
   border: 1px solid gray;
   display: flex; 
   flex-direction: row; 
   justify-content: space-around; 
   text-align: center;  
+  margin: 15px;
+  box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+  border-radius: 10px;
 }
 
 .head-img{
