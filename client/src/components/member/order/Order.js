@@ -2,30 +2,28 @@ import React, { useState, useEffect } from "react";
 import { NEW_ORDER, PICKUP_ORDER } from "../../../utils/context/action";
 import { useStoreContext } from "../../../utils/context/GlobalState";
 import axios from "axios";
+import uuid from "react-uuid";
 import "./order.css";
 
 function Order() {
   const [state, dispatch] = useStoreContext();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetchOrder();
-  }, []);
-  const fetchOrder = () => {
     axios.get('/api/order').then((res) => {
       dispatch({ type: NEW_ORDER, payload: res.data });
       setIsLoading(false);
     });
-  };
+  }, [dispatch]);
+
   const pickupOrder = (id) => {
-    console.log(id)
-    // axios.delete("/api/books/" + id)
+    // console.log(id)
     // axios.delete('/api/order/' + id).then((res) =>{
     //   console.log(res)
     //   dispatch({ type: PICKUP_ORDER, payload: res });
     // })
     dispatch({ type: PICKUP_ORDER, payload: id });
   }
-  
+
   return (
     <>
       {isLoading ? (
@@ -53,13 +51,9 @@ function Order() {
 
           {state.orders !== [] &&
             state.orders[0].map((order) => (
-
-              <div className="content">
-
+              <div className="content" key={uuid()}>
                 <div className=" head head-img">
-
                   <img
-
                     src={order.image}
                     alt=""
                   />

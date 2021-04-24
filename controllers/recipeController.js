@@ -10,7 +10,6 @@ module.exports = {
         Order.create(myOrder)
             .then((orderData) => {
                 res.json(orderData);
-                // console.log("==> ", orderData);
             })
             .catch((err) => {
                 console.log(err);
@@ -25,7 +24,6 @@ module.exports = {
     },
     deleteOrder: (req, res) => {
         const id = req.params
-        console.log(id)
         Order.findByIdAndDelete(id)
             .then(orderData => {
                 res.json(orderData)

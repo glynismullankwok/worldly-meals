@@ -63,6 +63,14 @@
     margin: 0;
 
   }
+  .li-btn {
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    color: #fff;
+    padding: 2rem;
+    font-size: 20px;
+    border: none;
+    margin: 0%;
+  }
   
   .nav-links {
     color: #fff;
@@ -99,10 +107,6 @@
   
   .menu-icon {
     display: none;
-  }
-
-  .btn {
-    color: var(--primary-green) !important;
   }
 
   .btn-mobile {
@@ -150,7 +154,6 @@
       position: absolute;
       top: center;
       left: 0;
-      /* transform: translate(25%, 50%); */
     }
   
     .menu-icon {
@@ -171,7 +174,6 @@
     }
   
     .nav-links-mobile {
-      /* display: block; */
       text-align: center;
       margin: 2rem auto;
       border-radius: 4px;
@@ -193,12 +195,6 @@
       color: var(--primary-green) !important;
     }
   }
-
-  /* @media only screen and (max-width: 600px) {
-    .navbar-logo {
-      font-size: 14px;
-    }
-  } */
 
   @media only screen and (min-width: 601px) {
     .navbar-logo {

@@ -7,12 +7,11 @@
 .Form-container {
     width: 400px;
     align-self: center;
-    background-color: beige;
+    background-color: white;
     margin: 0 auto;
     margin-top: 5rem;
-    border: 1px solid gray;
     padding: 10px 0px 40px 0px;
-    box-shadow: -5px -5px 5px 5px  lightgray, 5px 5px 5px 5px lightgray;
+    box-shadow: -5px -5px 5px 5px  rgb(75, 73, 73), 5px 5px 5px 5px rgb(75, 73, 73);
 }
 
 .Text-container {
@@ -34,11 +33,10 @@ input {
     width: 100%
 };
 
-button {
+.sign-btn {
     padding:7px;
     font-size:20px;
     font-family: 'Roboto', sans-serif;
-    border: 2px red solid;
 };
 
 button:hover {

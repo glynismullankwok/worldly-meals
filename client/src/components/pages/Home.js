@@ -11,7 +11,6 @@ import '../../App.css';
 const Home = () => {
     const history = useHistory()
     const [data, setData] = useState([]);
-    console.log(data)
     const [search, setSearch] = useState("Ethiopian Food");
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,13 +21,11 @@ const Home = () => {
     const fetchFood = () => {
         const APP_ID = process.env.REACT_APP_APP_ID;
         const API_KEY = process.env.REACT_APP_API_KEY;
-        
+
         axios(`https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`)
             .then(res => {
-                // console.log(res.data.hits);
                 const food = res.data.hits.map((hit) => ({ id: uuid(), price: (Math.random() * 10 + 20).toFixed(2), hit }));
                 setData(food);
-                // console.log("food=> ", food)
                 setIsLoading(false);
             });
     };
@@ -37,7 +34,6 @@ const Home = () => {
         if (searchFood === "") {
             setSearch("chicken");
         } else {
-            // console.log(searchFood);
             setSearch(searchFood);
         }
     };
@@ -45,10 +41,13 @@ const Home = () => {
         <div className='recipeContainer'>
             <HeroSection />
             <SearchFood handleSearch={handleSearch} />
-            {isLoading ? (<p>Loading...</p>) : (
-                <div className='allItems'>
-                    {data !== [] && data.map((Items) => (
-                        <>
+            <div className='recipeLoading'>
+                <h1 className='recipeHeader'>
+                    Recipes
+            </h1>
+                {isLoading ? (<p>Loading...</p>) : (
+                    <div className='allItems'>
+                        {data !== [] && data.map((Items) => (
                             <div key={uuid()} className='recipeHide'>
                                 <div className='divMe'>
 
@@ -66,11 +65,12 @@ const Home = () => {
                                     <button className='btn-order' onClick={() => history.push('/login')}>Order</button>
                                 </div>
                             </div>
-                        </>
-                    ))
-                    }
-                </div>
-            )}
+
+                        ))
+                        }
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

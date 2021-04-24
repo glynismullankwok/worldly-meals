@@ -2,7 +2,6 @@ const User = require('../models/user');
 
 module.exports = {
     signupUser: (req, res) => {
-        // console.log(req.body)
         const { username, email, password } = req.body;
         User.findOne({ email: email }, async (err, user) => {
             if (err) console.log('user: ', err)
@@ -16,16 +15,22 @@ module.exports = {
             };
         });
     },
-    
+
     userLogin: async (req, res) => {
-        // console.log(req.body)
         const { email, password } = req.body
         if (email) {
             const result = await User.find({ email: email, password: password })
             res.json({ id: result[0]._id, email: result[0].email })
-            console.log(result)
-        }else {
+        } else {
             res.json({ user: null })
         };
-    }, 
+    },
+    userLogout: (req, res) => {
+        if (req.user) {
+            req.logout();
+            res.send({ msg: "logging out" });
+        } else {
+            res.send({ msg: "no user to log out" });
+        }
+    }
 }

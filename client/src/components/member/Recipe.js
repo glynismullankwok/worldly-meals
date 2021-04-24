@@ -35,7 +35,6 @@ const Recipe = () => {
     if (searchFood === "") {
       setSearch("chicken");
     } else {
-      // console.log(searchFood);
       setSearch(searchFood);
     }
   };
@@ -47,7 +46,6 @@ const Recipe = () => {
         <h1 className='recipeHeader'>
           Recipes
       </h1>
-
         {isLoading ? "Loading..." : (<Item />)}
       </div>
     </div>

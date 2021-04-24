@@ -1,8 +1,16 @@
-import { ADD_RECIPE, SHOW_DETAIL, HIDE_DETAIL, REMOVE_RECIPE, NEW_ORDER, PICKUP_ORDER } from "./action";
+import { ADD_RECIPE, SHOW_DETAIL, HIDE_DETAIL, REMOVE_RECIPE, NEW_ORDER, PICKUP_ORDER, USER_LOGIN, LOGOUT_USER } from "./action";
 
 const reducer = (state, action) => {
   switch (action.type) {
-
+    
+    case USER_LOGIN:
+      return {
+        ...state, userLogin: action.payload
+      }
+      case LOGOUT_USER:
+        return {
+          ...state, userLogin: ''
+        }
     case ADD_RECIPE:
       return {
         ...state, recipe: [action.payload, ...state.recipe]

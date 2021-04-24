@@ -3,14 +3,8 @@ import { BsSearch } from "react-icons/bs";
 import './recipe.css'
 
 const SearchFood = (props) => {
-  //const [count, dispatch] = useContext(TryContext);
-  //const [state, dispatch] = useStoreContext();
   const [searchFood, setSearchFood] = useState("");
-  // console.log(state);
-  // const submitBalance = (e) => {
-  //   e.preventDefault();
-  //   dispatch({ type: SET_BALANCE });
-  // };
+
   return (
     <div className='search-div'>
       <input
