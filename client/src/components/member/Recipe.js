@@ -35,7 +35,6 @@ const Recipe = () => {
     if (searchFood === "") {
       setSearch("chicken");
     } else {
-      // console.log(searchFood);
       setSearch(searchFood);
     }
   };

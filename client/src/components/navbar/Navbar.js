@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-// import {useStoreContext} from '../../utils/context/GlobalState';
+import { useStoreContext } from '../../utils/context/GlobalState';
+import { LOGOUT_USER } from '../../utils/context/action';
 import './Navbar.css';
 
 const Navbar = () => {
     const history = useHistory()
-    // const usesStoreContext = useStoreContext()
+    const [state, dispatch] = useStoreContext();
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [, setButton] = useState(true);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -21,44 +21,15 @@ const Navbar = () => {
             setButton(true);
         }
     };
-    useEffect(() => {
-        Login();
-    }, []);
 
-    useEffect(() => {
-        Logout();
-    }, []);
-
-    const Login = () => {
-        // e.preventDefault()
-        console.log('Login')
-        axios.post('/api/user/login').then(res => {
-            console.log(res)
-            if (res.data) {
-                setLoggedIn(true)
-                console.log('hide nave')
-                history.push('/recipe')
-            } else {
-                console.log('show nave')
-                setLoggedIn(false)
-            };
-
-        });
-    };
-
-    const Logout = () => {
-        // e.preventDefault()
-        console.log('Logout')
+    const handleLogout = (e) => {
+        e.preventDefault()
         axios.post('/api/user/logout').then(res => {
-            console.log(res)
-            if (res.data) {
-                setLoggedIn(false)
-                console.log('hide navbar')
-                history.push('/')
-            } else {
-                console.log('show navbar')
-                setLoggedIn(true)
-            }
+            window.onunload = () => {
+                window.localStorage.clear();
+            };
+            dispatch({ type: LOGOUT_USER });
+            history.push('/');
         })
     }
 
@@ -72,12 +43,10 @@ const Navbar = () => {
     return (
 
         <>
-            {/* {loggedIn.toString()} */}
-
-            {!loggedIn ? (
+            {state.userLogin ? (
                 <nav className='navbar'>
                     <div className='navbar-container'>
-                        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        <Link to='/recipe' className='navbar-logo' onClick={closeMobileMenu}>
                             Worldly Meals
                              <i className="fas fa-utensils"></i>
                         </Link>
@@ -87,12 +56,7 @@ const Navbar = () => {
                         </div>
 
                         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                            {/* <li className='nav-item'>
-                                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                    Home
-                                </Link>
-                            </li> */}
-
+                        
                             <li className='nav-item'>
                                 <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
                                     Recipes
@@ -102,23 +66,16 @@ const Navbar = () => {
                             <li className='nav-item'>
                                 <Link to='/order' className='nav-links' onClick={closeMobileMenu}>
                                     Order
-                            </Link>
+                                </Link>
                             </li>
 
                             <li className='nav-item'>
-                                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                <button onClick={handleLogout} className='nav-links li-btn'>
                                     Logout
-                            </Link>
+                                </button>
                             </li>
 
-                            {/* <li className='nav-item'>
-                                <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                    Signup
-                            </Link>
-                            </li> */}
                         </ul>
-
-                        {/* {button && <Button buttonStyle='btn--outline'>Sign up</Button>} */}
                     </div>
                 </nav>
             ) : (
@@ -126,8 +83,8 @@ const Navbar = () => {
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                            Worldly Meals
-                       <i className="fas fa-utensils"></i>
+                        International Ingredients to Worldly Meals 
+                            <i className="fas fa-utensils"></i>
                         </Link>
 
                         <div className='menu-icon' onClick={handleClick}>
@@ -138,42 +95,10 @@ const Navbar = () => {
                             <li className='nav-item'>
                                 <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                     Home
-                        </Link>
-                            </li>
-
-                            {/* <li className='nav-item'>
-                                <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
-                                    Login
-                            </Link>
-                            </li> */}
-
-                            {/* <li className='nav-item'>
-                                <Link to='/recipe' className='nav-links' onClick={closeMobileMenu}>
-                                    Recipes
                                  </Link>
-                            </li> */}
-
-                            {/* <li className='nav-item'>
-                                <Link to='/order' className='nav-links' onClick={closeMobileMenu}>
-                                    Order
-                            </Link>
-                            </li> */}
-
-                            {/* <li className='nav-item'>
-                                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                    Logout
-                            </Link>
-
-                            </li> */}
-
-                            <li className='nav-item'>
-                                <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                    Signup
-                            </Link>
                             </li>
 
                         </ul>
-                        {/* {button && <Button buttonStyle='btn--outline'>Sign up</Button>} */}
                     </div>
                 </nav>
             )}

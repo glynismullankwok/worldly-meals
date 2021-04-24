@@ -9,6 +9,7 @@
     border: none;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
+
 }
 
 .btn--primary {
@@ -24,12 +25,14 @@
     border: 1px solid var(--primary);
     border-color: #809CA7;
     transition:all 0.3s ease-out;
+
 }
 
 .btn--medium {
     padding: 8px 20px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    
 }
 .btn--large {
     padding: 12px 26px;

@@ -1,10 +1,13 @@
 .order{
+    background-color: white;
     border: 1px gray solid;
+    box-shadow: 2px 2px 3px gray, -2px -2px 3px gray;
     border-radius: 1rem;
     padding: 1rem;
     width: 90vw;
     margin: 0 auto;
     margin-top: 1rem;
+
 }
 .order h1{
     text-align: center;

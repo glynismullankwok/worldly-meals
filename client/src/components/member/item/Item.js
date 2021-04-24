@@ -9,10 +9,9 @@ import { useHistory } from 'react-router-dom'
 import './item.css'
 
 const Item = () => {
-  // console.log(`=====>`, state)
   const [state, dispatch] = useStoreContext();
   const [showDetail, setShowDetail] = useState(false);
-  const history= useHistory();
+  const history = useHistory();
 
   const submitOrder = (id, title, image, price) => {
     const order = {
@@ -30,7 +29,7 @@ const Item = () => {
   return (
     <div className='allItems'>
       {state.recipe !== [] && state.recipe[0].map((Items) => (
-        <>
+        <div key={uuid()}>
 
           {showDetail && (
             <h1 className='myH1'>
@@ -39,7 +38,7 @@ const Item = () => {
           )}
 
           <div key={uuid()} className={showDetail ? 'recipeShow' : 'recipeHide'}>
-            <div className={!showDetail && 'divMe'}>
+            <div className={showDetail ? '':  'divMe'}>
               {showDetail && (
                 <>
                   <br />
@@ -77,26 +76,26 @@ const Item = () => {
                 <button className='btnToggle' onClick={() => setShowDetail(!showDetail)}> {showDetail ? "Hide Detail" : "Show Detail"}</button>
               </div>
               ) : (
-              <>
-              <div className="btnDiv" >
-                <button className='btn-order' onClick={() =>
-                  submitOrder(
-                    Items.id,
-                    Items.hit.recipe.label,
-                    Items.hit.recipe.image,
-                    Items.price
-                  )
-                }>Order</button>
+                <>
+                  <div className="btnDiv" >
+                    <button className='btn-order' onClick={() =>
+                      submitOrder(
+                        Items.id,
+                        Items.hit.recipe.label,
+                        Items.hit.recipe.image,
+                        Items.price
+                      )
+                    }>Order</button>
 
-                <button className='btn-ignore' onClick={() => dispatch({ type: REMOVE_RECIPE, payload: Items.id })}>Ignore</button>
+                    <button className='btn-ignore' onClick={() => dispatch({ type: REMOVE_RECIPE, payload: Items.id })}>Ignore</button>
 
-                </div>
-                <div className="btnDiv" >
+                  </div>
+                  <div className="btnDiv" >
 
-                <a className='anchor' href={Items.hit.recipe.url}>Third Party</a>
-                <button className='btnToggle' onClick={() => setShowDetail(!showDetail)}> {showDetail ? "Hide Detail" : "Show Detail"}</button>
-              </div>
-              </>
+                    <a className='anchor' href={Items.hit.recipe.url}>Third Party</a>
+                    <button className='btnToggle' onClick={() => setShowDetail(!showDetail)}> {showDetail ? "Hide Detail" : "Show Detail"}</button>
+                  </div>
+                </>
               )}
 
             </div>
@@ -113,7 +112,7 @@ const Item = () => {
                   {Items.hit.recipe.ingredients.map((ingredient) => (
                     <Ingredient {...ingredient} key={uuid()} />
                   ))}
-                  
+
                 </div>
                 <div>
                   <h2 style={{
@@ -127,7 +126,7 @@ const Item = () => {
             ) : ''
             }
           </div>
-        </>
+        </div>
       ))
       }
     </div>

@@ -3,7 +3,6 @@ const express = require('express');
 const session = require('express-session');
 require('dotenv').config();
 
-// const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const passport = require('./passport');
 
@@ -19,10 +18,9 @@ app.use(express.json());
 // session middleware here
 app.use(
   session({
-    secret: "fraggle-rock", //pick a random string to make the hash that is generated secure
-    //   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    resave: false, //required
-    saveUninitialized: false, //required
+    secret: "fraggle-rock",
+    resave: false, 
+    saveUninitialized: false, 
   })
 );
 
