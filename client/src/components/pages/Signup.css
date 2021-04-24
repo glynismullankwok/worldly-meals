@@ -1,0 +1,53 @@
+.Container {
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;          
+}
+
+.Form-container {
+    width: 400px;
+    align-self: center;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 10px 0px 40px 0px;
+    box-shadow: -5px -5px 5px 5px  rgb(75, 73, 73), 5px 5px 5px 5px rgb(75, 73, 73);
+}
+
+.Text-container {
+    text-align: center;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row{
+    margin-top: 1rem;
+}
+
+input {
+    padding: 5px;
+    font-size:15px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%
+};
+
+.sign-btn {
+    padding:7px;
+    font-size:20px;
+    font-family: 'Roboto', sans-serif;
+};
+
+button:hover {
+    background-color: rgb(23, 36, 109);
+    color: white;
+};
+
+@media screen and (min-width: 425px) {
+.Form-container {
+    align-items: center;
+    width: 100%;
+    margin:0 auto;
+    } 
+};

@@ -1,0 +1,130 @@
+.allItems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+  .myH1 {
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 8px 10px 20px #888888;
+    border-radius:0.5rem;
+}
+
+.recipeHide {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 30px;
+  max-width: 400px;
+  min-width: 350px;
+  height: auto;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888, -5px -10px 8px #888888;
+  border: 1px solid lightgray;
+}
+.recipeHide:hover {
+  box-shadow: 5px 10px 10px #2c2a2a, -5px -10px 10px #2c2a2a;
+}
+  
+.recipeShow {
+  background-color: white;
+  width: 96vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  box-shadow: 5px 10px 8px #888888;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+  .divMe {
+    width: 100%;
+  }
+
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .detailsIng {
+    max-width: 400px;
+  }
+
+  .p, .btnDiv {
+    display: flex;
+    justify-content: space-around;
+    max-width: 400px;
+  }
+  
+  .btnDiv{
+    margin-top: 15px;
+  }
+
+  .btn-order {
+    font-family: 'Roboto', sans-serif;
+    background-color:aquamarine;
+    padding:4px 10px 4px 10px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+
+  .btn-order:hover {
+    font-family: 'Roboto', sans-serif;
+    background-color:green;
+    padding:6px 15px 6px 15px;
+    color: white;
+  }
+
+  .btn-ignore {
+    font-family: 'Roboto', sans-serif;
+    background-color:orange;
+    padding:4px 10px 4px 10px;
+    border-radius: 10px;
+    font-size: 19px;
+
+  }
+  .btn-ignore:hover {
+    font-family: 'Roboto', sans-serif;
+    background-color:red;
+    padding:6px 15px 6px 15px;
+    color: white;
+  }
+
+  .anchor {
+    font-family: 'Roboto', sans-serif;
+    background-color: yellowgreen;
+    text-decoration: none;
+    border: 2px gray solid;
+    padding:4px 10px 4px 10px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+
+  .anchor:hover {
+    background-color:rgb(17, 102, 28);
+    padding:6px 15px 6px 15px;
+    color: white;
+  }
+
+  .btnToggle {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(243, 189, 128);
+    text-decoration: none;
+    border: 2px gray solid;
+    padding:4px 10px 4px 10px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+
+  .btnToggle:hover {
+    background-color:rgb(61, 80, 9);
+    padding:6px 15px 6px 15px;
+    color: white;
+  }

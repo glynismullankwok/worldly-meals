@@ -1,24 +1,16 @@
 import reducer from './reducer'
 import React, { createContext, useReducer, useContext } from "react";
-import { SHOW_DITAIL } from './action';
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
-    posts: {},
     recipe:[],
-    ditail: [],
-    showDitail: false 
-    // currentPost: {
-    //   _id: 0,
-    //   title: "",
-    //   body: "",
-    //   author: ""
-    // },
-    // favorites: [],
-    // loading: false
+    orders:[],
+    showDetail: false, 
+    userLogin: localStorage.fullname
+  
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

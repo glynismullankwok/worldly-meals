@@ -1,20 +1,22 @@
-const router = require('express').Router()
-const passport = require('../passport')
-const recipeController = require('../controllers/recipeController')
+const router = require('express').Router();
+const passport = require('../passport');
+const userController = require('../controllers/userController');
+const recipeController = require('../controllers/recipeController');
 
- router.route('/api/user')
-    .post(recipeController.createUser)
+router.route('/api/user')
+    .post(userController.signupUser);
 
 router.route('/api/user/login', passport.authenticate('local'))
-    .post(recipeController.userLogin)
-    
-// router.route('api/recipe')
-// .get(recipeController.getRecipes)
-// .get(recipeController.createRecipe)
-// router.route('api/recipe/:id')
-// .get(recipeController.updateRecipe)
-// .get(recipeController.deleteRecipe)
-// router.route('api/recipe/:id')
-// .get(recipeController.getUser)
-// .get(recipeController.updateUser)
-module.exports = router
+    .post(userController.userLogin);
+
+router.route("/api/user/logout")
+    .post(userController.userLogout)
+
+router.route('/api/order')
+    .post(recipeController.createOrder)
+    .get(recipeController.getOrder);
+
+router.route('/api/order/:id')
+    .delete(recipeController.deleteOrder);
+
+module.exports = router;

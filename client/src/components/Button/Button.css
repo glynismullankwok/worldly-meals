@@ -8,6 +8,8 @@
     outline: none;
     border: none;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .btn--primary {
@@ -17,24 +19,29 @@
 }
 
 .btn--outline {
-    background-color: transparent;
+    background-color: black;
     color: #fff;
     padding: 8px 20px;
     border: 1px solid var(--primary);
+    border-color: #809CA7;
     transition:all 0.3s ease-out;
+
 }
 
 .btn--medium {
     padding: 8px 20px;
     font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 .btn--large {
     padding: 12px 26px;
     font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn--medium:hover, .btn--large:hover {
-    background: #fff;
+    background: rgb(19, 76, 168);
     color: #242424;
     transition:all 0.3s ease-out;
 }

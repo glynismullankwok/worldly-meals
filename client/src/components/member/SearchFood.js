@@ -1,49 +1,39 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
-
+import './recipe.css'
 
 const SearchFood = (props) => {
-  //const [count, dispatch] = useContext(TryContext);
-  //const [state, dispatch] = useStoreContext();
   const [searchFood, setSearchFood] = useState("");
-  // console.log(state);
-  // const submitBalance = (e) => {
-  //   e.preventDefault();
-  //   dispatch({ type: SET_BALANCE });
-  // };
+
   return (
-    <div
-      style={{ width: "50%", margin: "10px 0px 0px 10px" }}
-      className="input-group mb-3"
-    >
+    <div className='search-div'>
       <input
         type="text"
         className="form-control"
+<<<<<<< HEAD
         placeholder="search recipes"
         aria-label="Username"
+=======
+
+        placeholder="search"
+        aria-label="search"
+
+>>>>>>> main
         aria-describedby="basic-addon1"
         value={searchFood}
         onChange={(e) => {
           setSearchFood(e.target.value);
         }}
       />
-      <span
-        className="input-group-text"
+      <button className="search-btn"
         type="submit"
         onClick={() => {
           props.handleSearch(searchFood);
           setSearchFood("");
-        }}
-        style={{
-          backgroundColor: "white",
-          cursor: "pointer",
-          border: "1px solid lightgray",
-        }}
-      >
-        <BsSearch />
-      </span>
+        }}><BsSearch /></button>
     </div>
   );
 };
-
 export default SearchFood;
+
+

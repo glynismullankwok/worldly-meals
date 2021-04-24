@@ -1,4 +1,5 @@
 # worldly-meals
+
 ## Group 6 - Project 3
 
 ***
@@ -44,7 +45,7 @@ XX
 
 ### Application Deployment Link - Heroku
 
-[International Ingredients to Wordly Meals](https://XX)
+[International Ingredients to Wordly Meals](https://aqueous-ocean-13819.herokuapp.com/)
 
 ### Repository
 
@@ -59,5 +60,7 @@ Thanks to the following people who have contributed to this project:
 * [@DestaMulualem](https://github.com/destish21)
 * [@TracyGolden](https://github.com/tracy80s2003)
 
+## License
+   [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT).
+ 
 
-### 
