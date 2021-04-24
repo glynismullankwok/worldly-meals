@@ -6,13 +6,13 @@
 
 ## User Story
 
-* AS A user who is interested in signing up with a meal delivery service and comparing all of my options,
-* I WANT a service that offers a great variety of international recipe choices that all come with nutritional data,
-* AND THEN be able to save recipes, ingredients, meal selections to my profile and/or my cart.
+* AS A health-conscious consumer who enjoys cooking,
+* I WANT a convenient, large international variety of quick and easy meal prep options with nutritional facts,
+* AND THEN I can pick up each meal kit which includes all the necessary ingredients to cook each meal.
 
 ## Description
 
-Our project is an e-commerce app called International Ingredients to Wordly Meals. It is for an international meal prep company, where customers can shop for international meals. The meal kits come with all the ingredients needed to prepare the desired meal. What sets our company apart is the great variety of international recipe choices that all come with nutritional data that the customer can use to fit into their own diets and lifestyles.
+Our project is an e-commerce app called International Ingredients to Wordly Meals. "Worldly Meals" for short. It’s a meal prep company, where customers can shop and pick up ingredients to cook international meals. The meal kits come with all the ingredients needed to prepare the desired meal. What sets our company apart? We offer a great variety of international recipe choices that all come with nutritional data that the customer can use to fit into their own diets and lifestyles.
 
 ## Project/Application Requirements
 
@@ -30,18 +30,28 @@ Our project is an e-commerce app called International Ingredients to Wordly Meal
 
 ## API
 
-International Ingredients to Wordly Meals utilizes Edamam&#8212;a robust app that offers a variety of API's broken down by 3 main topics: food, nutrition and recipes. From there, you will find more API's within each one of those 3 main topics. It can also be broken down by Business vs Consumer.
+Wordly Meals utilizes Edamam&#8212;a robust app that offers a variety of API's broken down by 3 main topics: food, nutrition and recipes. From there, you will find more API's within each one of those 3 main topics. It can also be broken down by Business vs Consumer.
 
 * [Edamam](https://www.edamam.com/)
 
-## App Screenshot
+## Technologies Used
 
-![worldly-meals](./public/Images/worldly-meals.gif)
+* ReactJS
+* Heroku
+* mongoDB Database with Mongoose ORM
+* Node and Express Web Server
+* Robo 3T
+* Postman
+* Passport (authentication middleware for Node.js)
+* Bcrypt
+* Axios (for making external api calls from the server)
+* Wireframe CC
+* GitHub (for Project Management System)
+* Favicon Generator (https://favicon.io/favicon-generator/)
 
-## Template Engine
+## App Demo
 
-XX
-<!-- The application framework for this site is by [Handlebars](https://handlebarsjs.com/) -->
+![worldly-meals](./client/public/images/worldly-meals.gif)
 
 ### Application Deployment Link - Heroku
 
@@ -61,6 +71,6 @@ Thanks to the following people who have contributed to this project:
 * [@TracyGolden](https://github.com/tracy80s2003)
 
 ## License
-   [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT).
+   [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  
 
