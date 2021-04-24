@@ -35,7 +35,7 @@
     border-radius: 15%;
 }
 .search-div{
-    width: 40vw;
+    width: 35vw;
     min-width: 300px; 
     margin: 40px 0px 0px 20%;
     display:flex;
@@ -54,7 +54,7 @@
         display: column;
     } 
     .search-div{
-        width: 90vw;
+        width: 85vw;
         margin-top: 20px;
         font-size: 2rem;
 
