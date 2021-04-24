@@ -10,15 +10,10 @@ const SearchFood = (props) => {
       <input
         type="text"
         className="form-control"
-<<<<<<< HEAD
-        placeholder="search recipes"
-        aria-label="Username"
-=======
 
         placeholder="search"
         aria-label="search"
 
->>>>>>> main
         aria-describedby="basic-addon1"
         value={searchFood}
         onChange={(e) => {
