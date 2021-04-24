@@ -18,19 +18,14 @@ const Recipe = () => {
 
   const fetchFood = () => {
     const APP_ID = process.env.REACT_APP_APP_ID;
-    console.log(APP_ID);
     const API_KEY = process.env.REACT_APP_API_KEY;
-    console.log(API_KEY);
-    
-    axios
-      .get(
-        `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`
-      )
+
+    axios.get(`https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${API_KEY}`)
       .then(res => {
         // console.log(res.data.hits);
-        const food = res.data.hits.map((hit) => ({ id: uuid(), price:(Math.random() * 10 + 20).toFixed(2), hit }));
+        const food = res.data.hits.map((hit) => ({ id: uuid(), price: (Math.random() * 10 + 20).toFixed(2), hit }));
         // console.log("food=> ", food);
-        dispatch({type:ADD_RECIPE, payload: food})
+        dispatch({ type: ADD_RECIPE, payload: food })
         setrecipe(({ ...recipe }, food));
         setIsLoading(false);
       });
@@ -49,8 +44,8 @@ const Recipe = () => {
     <div className='recipeContainer'>
       <SearchFood handleSearch={handleSearch} />
       <div className='recipeLoading'>
-      <h1 className='recipeHeader'>
-        Recipes
+        <h1 className='recipeHeader'>
+          Recipes
       </h1>
 
         {isLoading ? "Loading..." : (<Item />)}

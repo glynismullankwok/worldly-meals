@@ -45,6 +45,7 @@
 }
   .divMe {
     width: 100%;
+    margin-bottom: 15px;
   }
 
   .details {
@@ -62,9 +63,11 @@
     justify-content: space-around;
     max-width: 400px;
   }
+  
   .btnDiv{
     margin-top: 15px;
   }
+
   .btn-order {
     font-family: 'Roboto', sans-serif;
     background-color:aquamarine;
@@ -72,13 +75,14 @@
     border-radius: 10px;
     font-size: 19px;
   }
+
   .btn-order:hover {
     font-family: 'Roboto', sans-serif;
     background-color:green;
     padding:6px 15px 6px 15px;
     color: white;
-
   }
+
   .btn-ignore {
     font-family: 'Roboto', sans-serif;
     background-color:orange;
@@ -109,6 +113,7 @@
     padding:6px 15px 6px 15px;
     color: white;
   }
+
   .btnToggle {
     font-family: 'Roboto', sans-serif;
     background-color: rgb(243, 189, 128);
@@ -118,6 +123,7 @@
     border-radius: 10px;
     font-size: 19px;
   }
+
   .btnToggle:hover {
     background-color:rgb(61, 80, 9);
     padding:6px 15px 6px 15px;

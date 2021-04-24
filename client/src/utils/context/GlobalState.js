@@ -9,8 +9,8 @@ const StoreProvider = ({ value = [], ...props }) => {
     posts: {},
     recipe:[],
     orders:[],
-    ditail: [],
-    showDitail: false 
+    detail: [],
+    showDetail: false 
   
   });
 

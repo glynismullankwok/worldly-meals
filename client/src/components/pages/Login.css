@@ -1,8 +1,7 @@
 .Container {
     width: 100vw;
     margin: 0 auto;
-    height: 100vh;   
-        
+    height: 100vh;          
 }
 
 .Form-container {
@@ -22,8 +21,8 @@
     font-family: 'Roboto', sans-serif;
     width: 80%;
     margin: 0 auto;
-
 }
+
 .row{
     margin-top: 1rem;
 }
@@ -40,7 +39,6 @@ button {
     font-size:20px;
     font-family: 'Roboto', sans-serif;
     border: 2px red solid;
-
 };
 
 button:hover {

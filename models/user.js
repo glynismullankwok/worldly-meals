@@ -26,6 +26,14 @@ userSchema.methods = {
         return bcrypt.hashSync(plainTextPassword, 10);
     },
 };
+
+//  Define hooks for pre-saving
+// userSchema.pre("save", (next) => {
+//     console.log(this.password, 'true')
+//         console.log("models/user.js pre save");
+//         this.password = this.hashPassword(this.password);
+//         next();
+
 // Define hooks for pre-saving
 userSchema.pre("save", (next) => {
     if (!this.password) {
