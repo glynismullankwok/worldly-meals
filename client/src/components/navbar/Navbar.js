@@ -47,8 +47,7 @@ const Navbar = () => {
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/recipe' className='navbar-logo' onClick={closeMobileMenu}>
-                            Worldly Meals
-                             <i className="fas fa-utensils"></i>
+                             <i className="fas fa-utensils">Worldly Meals</i>
                         </Link>
 
                         <div className='menu-icon' onClick={handleClick}>
@@ -83,8 +82,7 @@ const Navbar = () => {
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        International Ingredients to Worldly Meals 
-                            <i className="fas fa-utensils"></i>
+                            <i className="fas fa-utensils"> International Ingredients to Worldly Meals </i>
                         </Link>
 
                         <div className='menu-icon' onClick={handleClick}>
