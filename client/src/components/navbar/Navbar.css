@@ -1,25 +1,21 @@
-:root {
-  --primary-green: #ffffff;
-}
-
 .navbar {
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-
+    position: sticky;
     top: 0;
     z-index: 999;
   }
   
   .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 80px;
+    max-width: 1500px;
   }
   
   .navbar-logo {
@@ -29,37 +25,36 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-    font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
+
     padding: 0px 20px 0px 20px;
     margin-right: 25%;
     min-width:400px;
     width: 90%;
     word-wrap: break-word;
+
   }
   
   .fa-typo3 {
     margin-left: 0.5rem;
     font-size: 1.8rem;
-    font-family: 'Roboto', sans-serif;
   }
   
   .nav-menu {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
     list-style: none;
-    text-align: right;
-
-    width: 67vw;
-
-    height: 100%;
-    float:right; 
-    margin-left: 10%;
+    text-align: center;
+    width: 60vw;
+    justify-content: end;
+    margin-right: 2rem;
   }
   
   .nav-item {
     height: 80px;
+
     flex: 1;
     margin: 0;
 
@@ -71,37 +66,28 @@
     font-size: 20px;
     border: none;
     margin: 0%;
+
   }
   
   .nav-links {
     color: #fff;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
     text-decoration: none;
-    padding: 2rem 0.5rem;
-    width: 100%;
-    height: 100%;  
+    padding: 0.5rem 1rem;
+    height: 100%;
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid;
-    color: var(--primary-green) !important;
+    border-bottom: 4px solid #fff;
     transition: all 0.2s ease-out;
-  }
-
-  .navbar-logo:hover {
-
-    color: var(--primary-green) !important;
-    transition: all 0.2s ease-out;
-
-  }
-  .fa-bars:before {
-    content: "\f0c9";
     color: #fff;
-}
-
+  }
+  
+  .fa-bars {
+    color: #fff;
+  }
+  
   .nav-links-mobile {
     display: none;
   }
@@ -109,52 +95,50 @@
   .menu-icon {
     display: none;
   }
-
-  .btn-mobile {
-    margin-right: 20px;
-  }
   
-  @media screen and (max-width: 1115px) {
+  @media screen and (max-width: 960px) {
     .NavbarItems {
       position: relative;
     }
-    
+  
     .nav-menu {
-      display:flex;
-      flex-direction:column;
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      height: 41vh;
+      height: 90vh;
       position: absolute;
       top: 80px;
-      left: -135%;
+      left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
-  }
+    }
+  
     .nav-menu.active {
       background: #242222;
-      left:0;
-      margin: 0 auto;
+      left: 0;
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
     }
   
     .nav-links {
-      text-align: right;
+      text-align: center;
       padding: 2rem;
       width: 100%;
+      display: table;
     }
   
     .nav-links:hover {
-      background-color:rgb(187, 180, 180);
+      background-color: #fff;
       color: #242424;
       border-radius: 0;
     }
   
     .navbar-logo {
       position: absolute;
-      top: center;
+      top: 0;
       left: 0;
+      transform: translate(25%, 50%);
     }
   
     .menu-icon {
@@ -163,7 +147,6 @@
       top: 0;
       right: 0;
       transform: translate(-100%, 60%);
-      font-family: 'Roboto', sans-serif;
       font-size: 1.8rem;
       cursor: pointer;
     }
@@ -171,17 +154,16 @@
     .fa-times {
       color: #fff;
       font-size: 2rem;
-      font-family: 'Roboto', sans-serif;
     }
   
     .nav-links-mobile {
+      display: block;
       text-align: center;
       margin: 2rem auto;
       border-radius: 4px;
       width: 80%;
       text-decoration: none;
       font-size: 1.5rem;
-      font-family: 'Roboto', sans-serif;
       background-color: transparent;
       color: #fff;
       padding: 14px 20px;
@@ -193,27 +175,10 @@
       background: #fff;
       color: #242424;
       transition: 250ms;
-      color: var(--primary-green) !important;
     }
   }
 
-  /* @media only screen and (min-width: 601px) {
-    .navbar-logo {
-      font-size: 24px;
-      font-family: 'Roboto', sans-serif;
-    }
-  } */
-  
-  /* If the screen size is 600px or less, set the font-size of <div> to 30px */
-  /* @media only screen and (max-width: 600px) {
-    .navbar-logo {
-      font-size: 16px;
-      word-wrap: break-word;
-      max-width: 125px;
-      font-family: 'Roboto', sans-serif;
 
-    }
-  } */
 
   /* If the screen size is 300px or less, set the smaller font-size */
   @media only screen and (max-width: 425px) {
@@ -237,7 +202,6 @@
 
     .fa-bars:before {
         margin-right: -1000px;
-  }
-  
-  }
 
+  }
+}
