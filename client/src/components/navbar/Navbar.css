@@ -21,7 +21,7 @@
   .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: 3px;
+    margin-left: -20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -190,7 +190,6 @@
         flex-wrap: wrap;
         flex: 1;
         flex-direction: column;
-        padding: 10px;
         word-wrap:break-word;
         width: 60px;
 
@@ -199,8 +198,4 @@
         width: 135%;
     }
 
-    .fa-bars:before {
-        margin-right: -1000px;
-
-  }
 }
