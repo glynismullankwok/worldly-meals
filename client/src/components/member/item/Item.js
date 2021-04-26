@@ -51,7 +51,7 @@ const Item = () => {
                 src={Items.hit.recipe.image}
                 alt=""
               />
-              <h2 style={{ maxWidth: '400px' }}> {Items.hit.recipe.label}</h2>
+              <h2 style={{ maxWidth: '400px',marginTop:'10px' }}> {Items.hit.recipe.label}</h2>
               <h3>Price: ${Items.price}</h3>
               <p>
                 {Items.hit.recipe.cuisineType} {Items.hit.recipe.dietLabels} for{" "}
@@ -101,23 +101,17 @@ const Item = () => {
             </div>
             {showDetail ? (
               <>
-                <div className='detailsIng'>
-                  <h2 style={{
-                    textAlign: "center",
-                    textDecoration: 'underLine'
-                  }}>
-                    {" "}
+                <div className='detailsIng'><br/>
+                  <h2 >
                       Ingredients
                     </h2><br />
                   {Items.hit.recipe.ingredients.map((ingredient) => (
                     <Ingredient {...ingredient} key={uuid()} />
                   ))}
-
                 </div>
-                <div>
-                  <h2 style={{
-                    textDecoration: 'underLine'
-                  }}> Digest</h2><br />
+                <div><br/>
+                  <h2><br/>
+                     Digest</h2><br/>
                   {Items.hit.recipe.digest.map((content, index) => (
                     <Digest {...content} key={uuid()} index={index} />
                   ))}

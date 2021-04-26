@@ -21,12 +21,19 @@
   .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: 20px;
+    margin-left: 3px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     display: flex;
     align-items: center;
+
+    padding: 0px 20px 0px 20px;
+    margin-right: 25%;
+    min-width:400px;
+    width: 90%;
+    word-wrap: break-word;
+
   }
   
   .fa-typo3 {
@@ -47,6 +54,19 @@
   
   .nav-item {
     height: 80px;
+
+    flex: 1;
+    margin: 0;
+
+  }
+  .li-btn {
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    color: #fff;
+    padding: 2rem;
+    font-size: 20px;
+    border: none;
+    margin: 0%;
+
   }
   
   .nav-links {
@@ -158,16 +178,30 @@
     }
   }
 
-/* .navbar-logo:after {
-  content:"International Ingredients to Worldly Meals";
-}
-@media screen and (max-width: 1024px) {
-  .navbar-logo:before {
-    content:"Worldy Meals";
+
+
+  /* If the screen size is 300px or less, set the smaller font-size */
+  @media only screen and (max-width: 425px) {
+    .navbar-logo {
+        font-size: 25px;
+        font-family: 'Roboto', sans-serif;
+        text-align: left;
+        justify-content:left;
+        display: block;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap:break-word;
+        width: 60px;
+
+    }
+     .nav-menu, .navbar  {
+        width: 135%;
+    }
+
+    .fa-bars:before {
+        margin-right: -1000px;
+
   }
 }
-@media screen and (max-width: 480px) {
-  .navbar-logo:before {
-    content:"Worldy Meals";
-  }
-} */
