@@ -197,24 +197,6 @@
     }
   }
 
-  /* @media only screen and (min-width: 601px) {
-    .navbar-logo {
-      font-size: 24px;
-      font-family: 'Roboto', sans-serif;
-    }
-  } */
-  
-  /* If the screen size is 600px or less, set the font-size of <div> to 30px */
-  /* @media only screen and (max-width: 600px) {
-    .navbar-logo {
-      font-size: 16px;
-      word-wrap: break-word;
-      max-width: 125px;
-      font-family: 'Roboto', sans-serif;
-
-    }
-  } */
-
   /* If the screen size is 300px or less, set the smaller font-size */
   @media only screen and (max-width: 425px) {
     .navbar-logo {
