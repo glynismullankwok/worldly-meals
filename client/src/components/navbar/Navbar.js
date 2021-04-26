@@ -82,7 +82,7 @@ const Navbar = () => {
                 <nav className='navbar'>
                     <div className='navbar-container'>
                         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                            <i className="fas fa-utensils"> International Ingredients to Worldly Meals </i>
+                            <i className="fas fa-utensils"> Worldly Meals </i>
                         </Link>
 
                         <div className='menu-icon' onClick={handleClick}>
